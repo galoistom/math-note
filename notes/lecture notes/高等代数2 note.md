@@ -9,9 +9,7 @@ Let $T:V \rightarrow W$ be linear transformation and $n=dim(V),m=dim(W)$, then t
 # MP inverse
 Let $T:V \rightarrow W$ and $S:W \rightarrow V$, we say $S$ is the MP inverse of $T$ if and only if:1.$STS=S$ 2.$TST=T$ 3.$(ST)^*=ST$ 4.$(TS)^*=TS$. We will proof that this inverse is unique.
 **The existence:** Let $v \in V, w \in W, v' \in ker(T), v'' \in ker(T)^{\perp}, w' \in im(T), W'' \in im(T)^\perp$ with $v=v'+v'',w=w'+w''$ and $Tv=w'$ we set $Sw:=v''$. It is easy to check that $S$ is well defined. As to the uniquess, suppose $S,R$ are both MP inverse of $T$, then we have 
-$$
-S=STS=S(TS)^*=SS^*T^*=SS^*(TRT)^*=SS^*T^*R^*T^*=S(TS)^*(TR)*=STSTR=STR
-$$
+$$S=STS=S(TS)^*=SS^*T^*=SS^*(TRT)^*=SS^*T^*R^*T^*=S(TS)^*(TR)*=STSTR=STR$$
 Hence $S=STR=R$.
 
 # proposition1:
