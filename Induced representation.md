@@ -1,2 +1,0 @@
-[[Basic Definitions of representation]]
-
