@@ -23,3 +23,5 @@ The above notion will be used to consider the general case when the field $K$ ha
 >A representation of the algebra $K[Q]$ is giving each of the vertices a vector space, and the edges denote the linear transformation between them.
 
 The above notion might also ontribute to the study of representation of finite group, by seeing $G$ as a 1-category, and giving the point a vector space and vertices linear transformation(i.e. each elements in $G$ are seen as an elements in $GL(V)$) which is precisely the definition of the representation of a group. 
+
+Morover, some group might also have topological structure, and the representation preserving the structure(vector spaces have std.topolpgical structure) is called the representation of topological group. The concept will be used often in the representation of lie group and lie algebra.

@@ -140,7 +140,7 @@ Let $T \in End(V),\,^*T=T$, then $(v_1,v_2) \mapsto (Tv_1|v_2)=(v_1|Tv_2)$ is He
 
 **Theorem**(SVD/$\mathbb{C}$):Let $V,W$ be $IPS/\mathbb{C}$ with $dim(V)=m,dim(W)=n$ finite dimensional, and $T \in Hom(V,W)$, then there is a $ONB$ $v_1,\cdots,v_m$ of $V$ and $w_1,\cdots,w_n$ of $W$, and $\sigma_1 \geq \cdots \geq \sigma_p \geq 0,p:=\min\{m,n\}$, such that $Tv_i=w_i$ if $1 \leq i \leq p$. Then $\sigma_i$ are unique for $T$, we call it the singular values of $T$.
 Proof: $T^*T \in End(V)$, which is self adjoint and positive semidefinite. Using spectral theorem, one get that ites eigenvalue $\lambda_1 \geq \cdots \geq \lambda_p \geq \cdots \geq 0$, and eigenvalue $v_1,\cdots,v_m$ are ONB, taking $\sigma_i=\sqrt{\lambda_i}$, the rest is the same as the real version. #
-SVD says: $\exists$ unitary matrices $P:m \times m,Q:n \times n$, and $\sigma_1 \geq \cdots \geq \sigma_p \geq 0$ such that $^\dagger QAP=diag(\sigma_1,\cdots,\sigma_p)_{n \times m}$.
+SVD says: $\exists$ unitary matrices $P:m \times m,Q:n \times n$, and $\sigma_1 \geq \cdots \geq \sigma_p \geq 0$ such that $^\dagger QAP=P^{-1}AP=\begin{pmatrix}\sigma_1&&\\&\ddots&\\&&\sigma_p\end{pmatrix}_{n \times m}$.
 
 **Def-Thm**(Moore-Perose inverse): for any $T \in Hom(V,W),\exists!S \in Hom(W,V)$ s.t. $TST=T,STS=S,(TS)^*=TS,(ST)^*=ST$.
 Proof: same as the $\mathbb{R}$ version.
@@ -151,5 +151,22 @@ Let $V:IPS\mathbb{R}$, $dimV<\infty$, recall that $T \in End(V)$ is orthogonal i
 **Definition**: We say $T \in End(V)$ is normal if $^*TT=TT^*$.
 
 Lemma: if $T$ normal, $\exists k \geq 0$ s.t. $T^k=0_V \in End(V)$, then $T=0_V$
-Proof: Work with matrix, using sepctral theorem(for $\mathbb{C}$), then there is a a unitary $P$ s.t. $P^{-1}AP=diag\{\lambda_1,\cdots,\lambda_n\}$, then $P^{-1}A^kP=diag\{\lambda_1^k, \cdots,\lambda_n^k\}=0_{n \times n}$, hence $\lambda_i=0$, so $T=0$.
+Proof: Work with matrix, using sepctral theorem(for $\mathbb{C}$), then there is a a unitary $P$ s.t. $P^{-1}AP=\begin{pmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_p\end{pmatrix}$, then $P^{-1}AP=\begin{pmatrix}\lambda_1^k&&\\&\ddots&\\&&\lambda_p^k\end{pmatrix}$, hence $\lambda_i=0$, so $T=0$.
 Next: classify orthogonal transformation on $V:IPS/\mathbb{R}$, $dimV=n$. Observe that $A \in M_{n \times n}(\mathbb{R})$ is orthogonal $\Longleftrightarrow$ $A=(v_1| \cdots | v_n)$ forms an $ONB$ of $\mathbb{R}^n$.
+
+Examples:
+1. if n=1, then the orthogonal transformations are $\{\pm id_V\}$.
+2. assume $V=\mathbb{R}^2+std.IP$, then the orthogonal transformation must be sort of rotation: $R(\theta)=\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}$. It is a two dimensional representation of topological group $\mathbb{R}$ (c.f. [[Basic Definitions of representation]]). 
+
+**Theorem**: $n:=dim(V)$. Let $T \in End(V)$ be orthogonal then there is a $ONB$ under which $T$ becames 
+$$
+\begin{pmatrix}I_a&&&&\\&-I_b&&&\\&&R(\theta)&\\&&&\ddots&\\&&&&R(\theta_m)\end{pmatrix}
+$$
+where $a+b+2m=n,\theta_1,\cdots,\theta_m \in \mathbb{R}-\mathbb{Z}\pi$.
+
+Lemma: $T$ orthogonal, then $T+T^{-1}$ is self-adjoint and its eigenvalue $\in [-2,2]$.
+Proof:Let $S=T+T^{-1}$ then $V= \oplus_{\lambda \in [-2,2]} V_\lambda$, where $V_\lambda:=\{v \in V: Sv=\lambda_v\}$, and $\lambda$ runs through the eigenvalue of $S$, $TS=T^2+1=ST$, so $V_\lambda$ is $T-invariant$, so we reduce to the cease $V=V_\lambda$, i.e. $T+T^{-1}=\lambda \cdot id_V$. If $\lambda = \pm 2$, then $(T \mp id_V)^2=0_V$, and that $T \mp id_V$ is normal, so $T=\pm id_V$. If $|\lambda|<2$, then $T$ has no real eigenvalues. Fix $v \in V$, $v \neq 0$ and $Tv,v$ are linearly independent. Let $W= \langle v,Tv \rangle$, then $dimW=2$, invariant under $T$, so $W^\perp$ is invariant under $T^*=T^{-1}$, so $W^\perp$ is also $T-invariant$, hence $V=W \oplus W^\perp$. Using induction, we reudce the case to $V=V_\lambda, |\lambda|<2, dimV=2$, in which $x^2-\lambda x+1$ is the characteristic polynomial of $T$, hence $T=R(\theta),\theta \in \mathbb{R}-\mathbb{Z}\pi$ under $ONB$.
+*Remark*: the data $a,b,\theta_1,\cdots, \theta_m$ are uniquely determined by $T$ up to permutation by $\pi\mathbb{Z}$.
+
+Next we will consider the spectural case of $dimV=3$. 
+Definition: We say $T \in End(V)$ is a ratation if $T$ is orthogonal, $det(T)=1$.
