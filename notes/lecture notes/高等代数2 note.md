@@ -9,7 +9,9 @@ Let $T:V \rightarrow W$ be linear transformation and $n=dim(V),m=dim(W)$, then t
 # MP inverse
 Let $T:V \rightarrow W$ and $S:W \rightarrow V$, we say $S$ is the MP inverse of $T$ if and only if:1.$STS=S$ 2.$TST=T$ 3.$(ST)^*=ST$ 4.$(TS)^*=TS$. We will proof that this inverse is unique.
 **The existence:** Let $v \in V, w \in W, v' \in ker(T), v'' \in ker(T)^{\perp}, w' \in im(T), W'' \in im(T)^\perp$ with $v=v'+v'',w=w'+w''$ and $Tv=w'$ we set $Sw:=v''$. It is easy to check that $S$ is well defined. As to the uniquess, suppose $S,R$ are both MP inverse of $T$, then we have 
-$$S=STS=S(TS)^*=SS^*T^*=SS^*(TRT)^*=SS^*T^*R^*T^*=S(TS)^*(TR)*=STSTR=STR$$
+$$
+S=STS=S(TS)^*=SS^*T^*=SS^*(TRT)^*=SS^*T^*R^*T^*=S(TS)^*(TR)*=STSTR=STR
+$$
 Hence $S=STR=R$.
 
 # proposition1:
@@ -135,3 +137,19 @@ Let $T \in End(V),\,^*T=T$, then $(v_1,v_2) \mapsto (Tv_1|v_2)=(v_1|Tv_2)$ is He
 **Def-prop**: If $T\in End(V)$  is positive definite, then there is a unique $S \in End(V)$ such that $T$ is positive definite and $S^2=T$, we denote $S$ as $\sqrt{T}$. (The proof is the same as the case in $\mathbb{R}$ using spectral therorem.)
 
 **Theorem**(极分解/polar decomposition): Let $T \in End(V)$ be invertable, then there is a unique pair of $R,U \in End(V)$ s.t. $T=RU$ and $R$ is opsitive definite $R^*=R$ and $U$ unitary. (Special case is when $V=\mathbb{C}$, the theorem is simply $z=r \cdot\exp(i\pi \theta)$)
+
+**Theorem**(SVD/$\mathbb{C}$):Let $V,W$ be $IPS/\mathbb{C}$ with $dim(V)=m,dim(W)=n$ finite dimensional, and $T \in Hom(V,W)$, then there is a $ONB$ $v_1,\cdots,v_m$ of $V$ and $w_1,\cdots,w_n$ of $W$, and $\sigma_1 \geq \cdots \geq \sigma_p \geq 0,p:=\min\{m,n\}$, such that $Tv_i=w_i$ if $1 \leq i \leq p$. Then $\sigma_i$ are unique for $T$, we call it the singular values of $T$.
+Proof: $T^*T \in End(V)$, which is self adjoint and positive semidefinite. Using spectral theorem, one get that ites eigenvalue $\lambda_1 \geq \cdots \geq \lambda_p \geq \cdots \geq 0$, and eigenvalue $v_1,\cdots,v_m$ are ONB, taking $\sigma_i=\sqrt{\lambda_i}$, the rest is the same as the real version. #
+SVD says: $\exists$ unitary matrices $P:m \times m,Q:n \times n$, and $\sigma_1 \geq \cdots \geq \sigma_p \geq 0$ such that $^\dagger QAP=diag(\sigma_1,\cdots,\sigma_p)_{n \times m}$.
+
+**Def-Thm**(Moore-Perose inverse): for any $T \in Hom(V,W),\exists!S \in Hom(W,V)$ s.t. $TST=T,STS=S,(TS)^*=TS,(ST)^*=ST$.
+Proof: same as the $\mathbb{R}$ version.
+
+# Orthogonal transformation/operators on $IPS/\mathbb{R}$
+Let $V:IPS\mathbb{R}$, $dimV<\infty$, recall that $T \in End(V)$ is orthogonal if $T^*=T^{-1}$, so we have that $detT = \pm 1$.
+
+**Definition**: We say $T \in End(V)$ is normal if $^*TT=TT^*$.
+
+Lemma: if $T$ normal, $\exists k \geq 0$ s.t. $T^k=0_V \in End(V)$, then $T=0_V$
+Proof: Work with matrix, using sepctral theorem(for $\mathbb{C}$), then there is a a unitary $P$ s.t. $P^{-1}AP=diag\{\lambda_1,\cdots,\lambda_n\}$, then $P^{-1}A^kP=diag\{\lambda_1^k, \cdots,\lambda_n^k\}=0_{n \times n}$, hence $\lambda_i=0$, so $T=0$.
+Next: classify orthogonal transformation on $V:IPS/\mathbb{R}$, $dimV=n$. Observe that $A \in M_{n \times n}(\mathbb{R})$ is orthogonal $\Longleftrightarrow$ $A=(v_1| \cdots | v_n)$ forms an $ONB$ of $\mathbb{R}^n$.
