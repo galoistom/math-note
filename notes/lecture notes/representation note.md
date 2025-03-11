@@ -57,3 +57,28 @@ Proof: Define an inner product on $V$, recall that a function on $(,):V \times V
 To learn that whether two irreducible representations are isomorphic, we use the [[Schur's lemma]].
 
 Example: Let $\lambda=(\lambda_1, \cdots, \lambda_l)$ be a partitions of n (c.f. [[representation of symmetric group]]), consider the young subgroup $H= \prod S_{\{i_k, \cdots, i_{k+1}\}}$ , has a natural action of $S_n$ on it, extending lineardly, it can be seen as an $S_n$ module.
+
+**Theorem**: Let $V$ and $W$ be $G-modules$ and let $f:V \rightarrow W$, be a G-homomorphism.
+$kerf:=\{v \in V:f(v)=0\}$ is a G-submodule if $V$. If $imf:=\{f(v):v \in V\}$, then it is a submodule of $W$. Furthermore, there is an isomorphism $\theta: V/kerf \rightarrow imf$ sending $v+ker(f) \mapsto f(v)$. 
+Proof: clear.
+
+Lemma([[Schur's lemma]] V1):Let $U,V$ be irreducible representation of $G$, and $\phi:U \rightarrow V$ is a G-homomorphism. Then $\phi$ is either an isomorphism or an zero map.
+Proof:note that $ker(\phi) \leq_G U$, so $ker(\phi)$ is either $\{0\}$ or $U$, the same argument using on $V$, then we are done.
+
+Lemma([[Schur's lemma]] V2): Let $R:G \rightarrow GL_n$ and $S:G \rightarrow GL_n$ be irreducible $\mathbb{C}-matrix$ representations of $G$, ans let $X$ be an $n \times m$ which interwines $R$ ans $S$, THen either $X=0$ or $X$ is invertable and $n=m$.
+
+Lemma([[Schur's lemma]] V3): Let $R:G \rightarrow GL_n$ can be irreducible $\mathbb{C}-matrix$ representation of $G$, ans suppose the that $X$ an $n \times n$ matrix, s.t. $R(g)X=XR(g),\forall g \in G$, then $X=\lambda Id$ for some $\lambda \in \mathbb{C}$.
+Proof: Let $\lambda$ be an eigenvalue of $X$, then $det(X-\lambda Id)=0$, and $X-\lambda Id$ commute with $R(g)$, so $X-\lambda Id=0$
+*Remark:* In the V3, the field is not necessarily $\mathbb{C}$, but should be algebraicly closed.
+
+
+# characters
+Now we consider the character of representations
+
+Lemma: Let $G$ be a finite group, and let $R$ ans $S$ be $\mathbb{C}-matrix$ representations of $G$ with degree $n,m$. If $X$ is any $n \times m$ matrix then $Y:=\sum\limits_{g \in G}R(g)XS(g^{-1})$ interwines $R,S$.
+Proof:easy.
+
+Suppose now that $R^{(1)}, \cdots, R^{(S)}$ are irreducible $\mathbb{C}-matrix$ representations of finite group $G$, of degree $d_1, \cdots, d_S$. Further, assume that $R^(i) \not\simeq R^(j),i \neq j$, is pairwise inequivalent. 
+Choose $k,l$ arbitraily, and for $1 \leq m \leq d_k,1 \leq n \leq d_l$ Let $X_{m,n}^{k,l}$ be that $d_k \times d_l$ matrix where $(t,u)$ is 0 unless $t=u$ in which case it is 1. Then $Y^{k,l}_{m,n}:=\frac{1}{|G|} \sum\limits_{g \in G} R^{(k)}(g)X^{k,l}_{m,n}R^{(l)}(g^{-1})$. Using [[Schur's lemma]], we get that $Y^{k,l}_{m,n}=0$ if $k \neq l$, and $Y^{k,k}_{m,n}$ must be a scalar of $I_{d_k}$. So $(Y^{k,l}_{m,n})_{pq}=\lambda(k,m,n)\delta_{pq}\delta_{kl}$, but using the definition, one get that $(Y^{k,l}_{m,n})_pq=\frac{1}{|G|}\sum\limits_{g\in G}R^{(k)}_{pm}(g)R^{(l)}_{nq}(g^{-1})$. Meanwhile, set $X_{q,p}^{k,l}$ to be that $d_l \times d_k$ matrix where $(t,u)$ is $\delta_{tq}\delta_{up}$, set $Y^{l,k}_{q,p}:=\frac{1}{|G|}\sum\limits_{g \in G} R^{(l)}(g)X^{l,k}_{q,p}R^{(k)}(g^{-1})$, then one get $\lambda(l,q,p)\delta_{nm}\delta_{kl}=(Y^{l,k}_{q,p})_{n,m}=\frac{1}{|G|}\sum\limits_{g \in G}R^{(l)}_{nq}(g)R^{(k)}_{pm}(g^{-1})$. Hence $\lambda(l,q,p)\delta_{nm}\delta_{kl}=\lambda(k,m,n)\delta_{pq}\delta_{kl}$. One immediatly notice that $\lambda(k,n,n)=\lambda(l,p,p)=\mu(k)$, depending only on k, so $\lambda(k,m,n)=\mu_kf_{mn}$. Thus $\frac{1}{|G|}\sum\limits_{g \in G} R^{(l)}(g)X^{l,k}_{q,p}R^{(k)}(g^{-1})=\mu_k\delta_{nm}\delta_{pq}\delta_{kl}$. Putting $l=k,m=n$ and summing over all valumes of $n$ from 1 to $d_k$, then $\frac{1}{|G|}\sum\limits_{g \in G} \sum\limits_{n=1}^{d_k}R^{(k)}_{pn}(g)R^(k)_{nq}(g^{-1})=\mu_kd_k\delta_{pq}$, but $R^{(k)}(g)R^{(k)}(g^{-1})=Id_k$, so $\mu_k=d_k^{-1}$. Now using this conclusion, one get $\frac{1}{|G|}\sum\limits_{g \in G}R^{(l)}_{nq}(g)R^{(k)}_{pm}(g^{-1})=d_k^{-1}\delta_{nm}\delta_{kl}\delta_{pq}$. 
+
+Definition: a matrix $M$ with elements in $\mathbb{C}$ is unitraty if its matrix form is unitraty (c.f.[[高等代数2 note]]).
