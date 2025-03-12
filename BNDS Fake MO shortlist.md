@@ -6,7 +6,7 @@
 	- 乙每次选一个比甲这次选的数小的数.
 	若存在某个时刻使得甲选取$a_1,\cdots, a_k \in A,\ b_1,\cdots, b_k\in B$ (可重), 使得 $P|\sum\limits_{i=1}^{k}a_ix^{b_i}$,则甲胜, 若乙可以保证甲无法获胜则乙胜. 求所有$n$次无实根的$P$使甲有必胜策略.
 4. 对于$P \in \mathbb{Z}[x]$, 定义$T_P:=\{k \in \mathbb{Z}_{\geq 2}: P(x)|P(x^k)\}$, 求证:若$T_P \neq \emptyset$, 则$T_P$为无穷集.(LHB)
-5. 给定$n,k \in \mathbb{N}^+$, 设$a_1, \cdots, a_k,b_1, \cdots, b_k$为$2k$个绝对值不大于$n$的非零整数, 记$L$为$1, \cdots, n$中$k$个两两互素的质数之积, 若不存在则$L=lcm(1,\cdots,n)$, 证明:$\sum\limits_{i=1}^{n} \frac{a_i}{b_i}$的最小正取值为$\frac{1}{L}$.(LHB,DHY)
+5. 给定$n,k \in \mathbb{N}^+$, 设$a_1, \cdots, a_k,b_1, \cdots, b_k$为$2k$个绝对值不大于$n$的非零整数, 记$L$为$1, \cdots, n$中$k$个两两互素的质数之积, 若不存在则$L=lcm(1,\cdots,n)$, 证明:$\sum\limits_{i=1}^{n} \frac{a_i}{b_i}$的最小正取值为$\frac{1}{L}$.(LHB,DHY) **已被谜之竞赛使用**
 6. 给定$n$次首一整系数多项式$P$以及$T_P:=\{k \in \mathbb{Z}_{\geq 2}: P(x)|P(x^k)\}$, $f(k):=\# \{t \in T_P: 1<t \leq k\}$, 已知$f(x)\neq0$能成立, 证明:对$\forall c>0$, 存在$N \in \mathbb{N}$使$\lim\limits_{k \rightarrow \infty}\frac{f(k)}{k} \geq c \cdot \sqrt{\frac{\ln n}{n}}$ 对任意$n\geq N$成立.(LHB)
 7. 求所有$(x,y) \in \mathbb{Z}^2$满足$y^2=x^3-19$.(LZM)
 
