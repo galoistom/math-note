@@ -60,3 +60,28 @@ Then we have the following **theorem**:
 The algebra satisfying the above theorem are called *Hopf algebra*. the second equation is the associativity of $\mu$, the third and the forth correspond to $A$ being a *coalgebra* with the last one being the *coassociativity*. The antipode ensures that the category of left and right modules are the equivalent. The comultiplication meusres that a tensor product over $k$ of two A-module is again a A-module. 
 
 We want some how extend these maps to the twisted group algebra, then we get that the map sending $g \mapsto \alpha(g,g^{-1})g^{-1}$ where $g \in G$ induced an isomorphism $(k_\alpha[G])^{op} \simeq k_{\alpha^{-1}}G$, and that if $\gamma=\alpha\beta$ then there is a natural injective k-algebra homomorphism $k_\gamma[G] \rightarrow k_\alpha[G] \otimes_k k_\beta[G]$, and $k_\gamma[G]$ is a direct summand of $k_\alpha[G] \otimes_k k_\beta[G]$ as a $k_\gamma[G]-k_\gamma[G]$ bimodule.
+
+# Blocks and indempotent
+Given two k-algebra $B,C$, set the carstesian product $B \times C$ with the componentwise sum ans multiplication, together with the canonical projections onto $B$ ans $C$, is the direct product of $B,C$ in the category of k-algebra. Let $A$ be an k-algebra, a subalgebra $B$ is a direct factor if there is a split surjective $A-A$ bimodule homomorphism $\tau:A \rightarrow B$.
+
+Let $A$ be a k-algebra, and $b \in Z(A)$ be an indempotent, then $Ab:=\{ab:a \in A\}$ is a k-algebra with unit $b$. one  immediately know that $A(1-b)$ is also a k-algebra, and that $A=Ab \times A(1-b)$ as k-algebra. The following theorem bridge the connection between the two concept above.
+
+**Theorem**:
+Let $A$ be a k-algebra, $B$ a k-submodule of $A$, then the following are equivalent:
+1. $B$ is a direct summand of $A$ as an $A-A$ bimodule.
+2. B is a direct factor of A as a k-algebra.
+3. B=Ab for sum idempotent b in Z(A).
+*Proof*:
+Suppose (1) holds, let $A=B \oplus N$ as an A-A-bimodule. Notice that $BN \subset B \cap N \{0\}$, and write $1_A=b+n$, then $b=b \cdot 1_A=b^2+bn=b^2$ so $b$ is an indempotent, the same argument shows that $n$ is indempotent, so they are orthogonal. Write $a=c+r$ for some $c \in B,r \in N$, and $a=ab+an=ba+na$, so $b,n \in Z(A)$, and $B=Ab,N=An$.
+Suppose (2) holds, let $A=B \times C$, then $1_A=(1_B,0)+(0,1_C)$ and $(1_B,0),(0,1_C)$ are orthogonal indempotent in $Z(A)$. Setting $b=(1_B,0)$, then $B=Ab$.
+Suppose (3) holds, let $B=Ab$, and $C=A(1-b)$, then $A=B \oplus C$ as A-A-bimodule, and $A=B \times C$ as k-algebra.
+
+**Definition**:
+Let $A$ be a k-algebra. A *block* of $A$ is a primitive indempotent $b$ in $Z(A)$; the algebra $Ab$ is called a *block algebra* of $A$.
+
+**Theorem**:
+Suppose that k is noetherian. Let $A$ be a k-algebra such that $Z(A)$ is finitly generated as a k-module. Then $Z(A)$ is noetherian, and the following hold.
+1. The set of Blocks $\mathcal{B}$ of $A$ is the unique primitive decomposition of $1_A$ in $Z(A)$. In particular, $\mathcal{B}$ is finite, and they are pairwise orthogonal blocks of $A$.
+2. $A=\prod_{b \in \mathcal{B}} Ab$ is the uniuqe decomposition of $A$ as a direct product of indecomposable k-algebras.
+3. $A=\oplus_{b \in \mathcal{B}}Ab$ is the unique decomposition of $A$ as direct sum of indecomposable A-A-bimodule.
+*Proof*:
