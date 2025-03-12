@@ -85,3 +85,20 @@ Suppose that k is noetherian. Let $A$ be a k-algebra such that $Z(A)$ is finitly
 2. $A=\prod_{b \in \mathcal{B}} Ab$ is the uniuqe decomposition of $A$ as a direct product of indecomposable k-algebras.
 3. $A=\oplus_{b \in \mathcal{B}}Ab$ is the unique decomposition of $A$ as direct sum of indecomposable A-A-bimodule.
 *Proof*:
+Since $k$ is noetherian and $Z(A)$ is finitly generated as k-module, so $Z(A)$ is noetherian. Let $b \in \mathcal{B}$, and $c \in Z(A)$ is another primitive indempotent such that $bc \neq 0$. Then one have $b=bc+b(1-c)$, where $bc,b(1-c)$ are indempotent in $Z(A)$ but $b$ is primitive, so one must have $b(1-c)=0,b=bc$, the same agrument shows that $c=cb=bc=b$. The rest it then clear.
+
+In view of abilian category, there is no much difference between direct product and direct sum, and coproduct coincides with tensor product. That's why the decomposition of $A$ to its block yealds a direct sum and a direct product.
+
+**Definition**:
+Let $A$ be a k-algebra and $b$ be a block. We say that an A-module $M$ belongs to the block $b$ if $M=bM$.
+
+**Proposition**:
+Suppose that k is noetherian. Let $A$ be a k-algebra such that $A$ is finitl generated as a k-module, let $\mathcal{B}$ be the set of blocks of $A$.
+1. for any A-module $M$ we have $M=\oplus_{b \in \mathcal{B}}\,bM$.
+2. for any indecomposable A-module $M$ there is a unique block $b$ if $A$ such that $M=bM$.
+3. for any two A-module belonging to two different blocks $b,c$. We have $Hom_A(M,N)=\{0\}$.
+
+Using this proposition, we can study the category $Mod(A)$ by studying the category $Mod(Ab)$ where $b$ runs through the set of blocks of $A$.
+
+# Composition series and Grothendieck groups
+c.f.[[Grothendieck group]]
