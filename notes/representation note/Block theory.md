@@ -147,3 +147,34 @@ This is just saying that every $S$ can be written in the from of $Ind_N^G(T)$ fo
 # The Jacobson radical
 **Definition**: The *Jacobson radical* $J(A)$ of a k-algebra $A$ is the intersection of the annihilators of all simple left A-modules. More explicitly, $J(A)$ is equal to the set of all $a \in A$ satisfying $aS=\{0\}$ for every simple A-module $S$.
 
+**Theorem**(Nakayama's lemma):
+Let $A$ be a k-algebra. Let $M$ be a finitly generated A-module. If $N$ is a submoduel of $M$ such that $M=N+J(A)M$, then $M=N$. In particular, if $J(A)M=M$, then $M=\{0\}$.
+*Proof*:
+Note that there is always a maximal submodule of $M$ containing $V$, and notice that $J(A)M/V=0$ so one have $J(A)M \subseteq V$ hence $M \subseteq V$, so $N=M$.
+
+**Definition**:
+an ideal $I$ of $A$ is called *nilpotent* if there is a positive integer $n$ such that $I^n:=\{\prod_{i=1}^na_i:a_i \in I\}$ is $\{0\}$.
+
+**Theorem**:
+Let $A$ be a k-algebra
+1. the set $1+J(A)$ is subgroup of $A^\times$.
+2. the radical $J(A)$ contains every nilpotent in $A$.
+3. the radical $J(A)$ contains no indempotent.
+4. for any ring automorphism $\alpha$ of $A$, we have $\alpha(J(A))=J(A)$. In particular, if a group $G$ acts on $A$ by a ring automorphism, then $J(A)$ is a $G$-set.
+*Proof*:
+Let $a \in J(A)$, then consider $A=Aa+A(1-a)=J(A)+A(1-a)$, using the nakayama's lemma, one get $A=A(1-a)$, so $1-a$ has a inverse $1-b$ where $b=ba-a \in J(A)$, so we have (1). To proof (2), consider $IS$ for some simple module $S$ of $A$, which must be either $\{0\}$ of $S$, but the letter is impossible, because $I^nS=\{0\}$. (3) is obvious. (4) is just consider the module $_\alpha S$ on which $a \in A$ acts as $\alpha(a)$, then one immediately know that the map sending $S\, \mapsto \,_\alpha S$ is a one to one map, so one get that $J(A)$ is invariant under $\alpha$.
+
+**Theorem**
+Let $A$ be a k-algebra. The *radical* $J(A)$ is equal to any of the following:
+1. the intersection of the annihilators of all right simple A-modules;
+2. the intersection of all maximal left ideals in $A$;
+3. the intersection of all maximal right ideal in $A$.
+*Proof*:
+Clearly, $J(A) \subseteq \cap_M M$ where $M$ go throught the maximal ideal of $A$. Let $S$ be a simple A-module, then the map $A \rightarrow S$ sending $a \mapsto as$ for a fixed $s \in S$ is surjective with kernel $M_s$ the annihilator of $s$, then $I_S$ the intersection of $M_s$ is the annihilator of $S$ in $A$, in particular, $I_S$ is intersection of all maximal ideal of $A$ containing $S$. Thus $J(A)$, the intersection of all $I_S$ it the intersection of all maximal ideal.
+
+**Theorem**:
+Let $A$ be a k-algebra, and $I \subseteq J(A)$ is an ideal of $A$. Then we have the following [[Short exact sequence]]:
+$$1 \longrightarrow 1+I \longrightarrow A^{\times} \longrightarrow (A/I)^\times \longrightarrow 1.$$
+
+**Theorem**:
+Suppose that $k$ is a field. Let $A$ be a finite-dimensional k-algebra. Then $J(A)$ is the unique maximal nilpotent ideal in $A$. For any subalgebra $B$ of $A$ we have $J(A)$, and we have $J(Z(A))=J(A) \cap Z(A)$.
