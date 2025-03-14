@@ -170,3 +170,24 @@ Proof:Let $S=T+T^{-1}$ then $V= \oplus_{\lambda \in [-2,2]} V_\lambda$, where $V
 
 Next we will consider the spectural case of $dimV=3$. 
 Definition: We say $T \in End(V)$ is a ratation if $T$ is orthogonal, $det(T)=1$.
+**Definition**:
+Let $V:IPS/\mathbb{R}$ dimV=3. A rotation in $V:=$ orthogonal $T \in End(V)$ with $det(T)=1$.
+
+**Theorem**:
+they are either $I_3,\begin{pmatrix}1&\\&-I_2\end{pmatrix},\begin{pmatrix}1&\\&R(\theta)\end{pmatrix}$ for some suitable $ONB$, i.e. they act as rotating $v_2$ with angle $\theta$ around $v_1$. We may assume that $V= \mathbb{R}^n$.
+*Recall:* There is bijection $\{T \in GL(V)\} \leftrightarrow \{\text{ordered basis in } V\}$. We denote the ordered basis of $V$ by the frame basis of $V$. We say that two frames $v_1, \cdots, v_n$ have the same orientation if $detT>0$ and $T(e_1, \cdots, e_n)=(v_1, \cdots,v_n)$. Now asssume $V:IPS/\mathbb{R},dimV=n$, fix $e_1, \cdots, e_n$ a ordered $ONB$. Orthogonal frames := frames $v_1, \cdots,v_n$ that is an $ONB$ in $V$. We say a frame is positive orientated if the orthogonal frame has tha same orientation with $e_1, \cdots, e_n$. Hence: $\{\text{rotations in } \mathbb{R}^3\} \leftrightarrow \{\text{positive orientated frame in } \mathbb{R}\}$. $\forall u \in \mathbb{R}^3$ let $R_u(\theta):=$ the rotatate $\theta$ around $u$. Take the orthogonal frame $u=u_1,u_2,u_3$ then $R_u(\theta):=\begin{pmatrix}1&\\&R(\theta)\end{pmatrix}$ under the $ONB$ $u_1,u_2,u_3$. Easy to check that the definition does not depend on the choice of $u_2,u_3$.
+
+**Euler's angle**:
+Fix $T$. $u_1,u_2,u_3$ as above.
+First set $f_2=e_3 \times u_3$ if $e_3,u_3$ are linearly independent, $f_2=e_2$ if $e_3 \parallel u_3$, then $f_2 \perp e_3,u_3$, then we may take $R_{e_3}(\psi)e_2=f_2$, and the map $R_{e_3}(\psi):(e_1,e_2,e_3) \mapsto (f_1,f_2,e_3)$ for some $f_1$ is a positive orientated orthogonal frame.
+The second step is taking $\theta$ such that $R_{f_2}(\theta)e_3=u_3$, then tht map $R_{f_2}(\theta):(f_1,f_2,e_3) \mapsto (g_1,f_2,u_3)$ for some $g_1$ is a positive orientated orthogonal fram.
+The third step is note that $g_1,u_1$ are both $\perp u_3$, the one may choose $\phi$ such that $R_{u_3}(\phi)g_1=u_1$, sending $R_{u_3}(\phi):(g_1,f_2,u_3) \mapsto (u_1, \cdot, u_3)$, then the $\cdot$ must be $u_2$. 
+
+**Theorem**:
+Let $T$ be a rotation in $\mathbb{R}^3$ corresponding to $(u_1,u_2,u_3)$ then $T=R_{u_3}(\phi)R_{f_2}(\theta)R_{e_3}(\psi)$ we say $T$ is  expressed by the *Euler angles* $(\phi,\theta,\psi)$.
+
+# Quaternion's (四元数)
+$\mathbb{R} \subset \mathbb{C} \subset \mathbb{H}$: where $\mathbb{H}$ is the quaternions (Hamilton) which is a division ring.
+
+**Definition**:
+$\mathbb{H}$ is a 4 dimensional $\mathbb{R}$ vector space, which basis $1,i,j,k$ and multiplication $i^2=j^2=k^2=-1$ and $ij=k,jk=i,ki=j$, and span linearly to the multiplication of the ring(one can check that it is indeed a ring). Moreover, it is noncommutaive.
