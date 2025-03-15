@@ -177,4 +177,64 @@ Let $A$ be a k-algebra, and $I \subseteq J(A)$ is an ideal of $A$. Then we have 
 $$1 \longrightarrow 1+I \longrightarrow A^{\times} \longrightarrow (A/I)^\times \longrightarrow 1.$$
 
 **Theorem**:
-Suppose that $k$ is a field. Let $A$ be a finite-dimensional k-algebra. Then $J(A)$ is the unique maximal nilpotent ideal in $A$. For any subalgebra $B$ of $A$ we have $J(A)$, and we have $J(Z(A))=J(A) \cap Z(A)$.
+Suppose that $k$ is a field. Let $A$ be a finite-dimensional k-algebra. Then $J(A)$ is the unique maximal nilpotent ideal in $A$. For any subalgebra $B$ of $A$ we have $J(A) \cap B \subseteq J(B)$, and we have $J(Z(A))=J(A) \cap Z(A)$.
+*Proof*:
+We know that $J(A)$ contains every nilpotent in $A$, so all we have to check is that $J(A)$ is nilpotent itself, which is easy by considering $J(A) \supseteq J(A)^2 \supseteq \cdots$, and using the fact that $A$ is finite-dimensional, we know there is $J(A)^n=J(A)^{n+1}$ for some $n$, so $J(A)$ is nilpotent. Moreover, we have $J(A) \cap B$ is a nilpotent ideal of $B$, hance contained in $J(B)$. We also note that $AJ(Z(A))=J(Z(A))A$ is also a nilpotent ideal in $A$, so $J(Z(A)) = Z(A) \cap J(A)$.
+(*Remark*: then inclusion $J(A) \cap B \subset J(B)$ holds in a more general case: if $A \otimes_B T$ is nonzero for all simple modules $T$ of $B$, then $J(A) \cap B \subseteq J(B)$.)
+
+**Theorem**:
+Let $A$ be a k-algebra and let $I$ be an ideal in $A$. We have $(J(A)+I)/I \subseteq J(A/I)$.
+**Theorem**:
+Let $A$ and $B$ be k-algebras. Suppose that $A$ and $B$ are finitly generated as k-modules. We have $J(A) \otimes B+A \otimes J(B) \subseteq J(A \otimes_k B)$.
+
+**Theorem**:
+Let $A$ be a k-algebra and let $e$ be an idempotent in $A$.
+1. For any simple A-module $S$ either $eS=\{0\}$ or $eS$ is a simple $eAe$-module.
+2. For any simple $eAe$-module $T$ there is a simple A-module $S$ such that $eS \simeq T$.
+*Proof:*
+Suppose that $eS \neq \{0\}$, then we take a nonzero $eAe$ submodule $V$ of $eS$. Then $S=AV=AeV$, so $eS=eAeV$ is a simple module of $eAe$.
+Let's consider $A \otimes_{eAe} T=Ae \otimes_{eAe} T$, which is a nonzero $eAe$ module, so there is a maximal submodule $M$. Let $S:=A \otimes_{eAe} T/M$ be a simple A-module, then we get  a surjective map $\pi:A \otimes_{eAe} T \rightarrow S$,  which leads to a map $T \rightarrow eS$, we need to check that the map is not 0, which is easy, noticing that $e \otimes T$ generated $A \otimes T$. 
+*Remark*: 
+the two proof is silimiar to the concept of $Res$ and $Ind$, the most important thing is that $A=Ae$ as $eAe$-module. And $M$ is chosen to help as get a simple A-module $S$ such that $\pi$ does not act as 0 when restriced to $T$. one may also proof that $M$ is unique, in fact, the is the biggest submodule with $eM=\{0\}$. As in the iduced representation, we can get the same $S$ using $Hom_{eAe}(A,T)$. 
+
+**Theorem**:
+Let $A$ be an artinian algebra, $M$ be a finitly generated A-module, and $J$ a proper ideal of $A$.
+1. $M$ is semisimple if and only if $J(A)M=\{0\}$.
+2. $J(A)M$ is the intersection of all maximal submodules of $M$.
+*Proof*:
+One direction is obvious, now assume that $J(A)M=\{0\}$,  recall that $J(A)$ is the intersection of all maximal of $A$, and note that $A$ is artinian, so $J(A)= \bigcap_iI_i$, then consider the surjective map $A \rightarrow \bigoplus_iA/I_i$, the kernel is $J(A)$ and the left hand side is semisimple,  so $A/J(A)$ is semisimple too. Using the fact that $M$ is finitly generated, it is the quotient of $A^n$, in fact, because $J(A)M=\{0\}$, one know that it is actually the quotient of $(A/J(A))^n$, whence it is semisimple.
+We first notice $J(A)M \subseteq N$ for all maximal submodule $N$, so we only need to consider the case of $J(A)M=\{0\}$, in which we only need to check that $\bigcap_iN_i=\{0\}$. This is simple, using the fact that $M$ is semisimple, then every $M/N_i\simeq S_i$ for some simple A-module $S_i$, and the intersection is obviously $\{0\}$.
+
+**Definition**:
+Let $A$ be a k-algebra and $M$ an A-module, then the *socle* of $M$ $soc(M):=\sum_{\text{simple }N \subseteq M}N$ and $rad(M):=\bigcap_{\text{max } N \subseteq M} N$ the radical of $M$. Moreover $rad^{n+1}(M)=rad(rad^n(M))$, $soc^{n+1}(M)=soc(soc^n(M))$.
+
+**Theorem**:
+Let $A$ be a finite-dimensional k-algebra and $M$ a finitly generated A-module.
+1. $rad^n(M)=J^n(A)M$ for any $n \geq 0$.
+2. $soc^n(M)=\{m \in M:J^n(A)M=0\}$ for any $n \geq 0$.
+3. Let $s=inf_n\{rac^n(M)=0\}$ and $t=sup_n\{soc^n(M)=M\}$, then $s=t$ and for $0 \leq i \leq s$ we have $rad^i(M) \subseteq soc^{t-i}(M)$.
+*Proof*:
+Using the theorem above.
+
+**Definition**:
+Let $s$ mentioned above be a *Lovewy length* of $M$, denoted by $ll(M)$, and $rad^i(M)/rad^{i+1}(M)$ be the *Lovewy layers* of $M$.
+
+# Jacobson radical of finite group algebra
+**Theorem**:
+Let $k$ be a field of character $p$, and $P$ a finite $p$-group, then we have $I(k[P])^{|P|}=\{0\}$, in particular $I(k[P])=J(k[P])$.
+*Proof*:
+Note that $k[P]/I(k[P]) \simeq k$ is one-dimensional, so $I(k[P])$ is maximal, and $P$ acts on it as identiy, so we only need to proof $I(k[P])^{|P|}=\{0\}$. Using induction, we may assume that $Z:=Z(P)$ is nontrivial, and that $I(k[P/Z])^{|P/Z|}=\{0\}$. So what we only need to proof that $(I(k[Z])k[P])^p=\{0\}$ as $I(k[Z])k[P]$ is the ker of $k[P] \rightarrow k[P/Z]$. Since $(z-1)^p=z^p-1=0$ for $z \in Z$, and $I(k[Z])k[P]=k[P]I(k[P])$, $I(k[Z])=(z-1)k[Z]$, the equation is obvious.
+
+**Theorem**:
+Let $k$ be a field and $H \leq G$ be two groups such that $[G:H]$ is invertable in $k$. Let $M$ be a $k[G]$-module whose restriction to $k[H]$ is semisimple, then $M$ is semisimple as $k[G]$-module.
+*Proof*:
+Let $U$ be a submodule of $M$, we want to show that there is a compliment of $U$ in $M$. Take $V$ be the compliment of $U$ in $M$ as a $k[H]$-module, and a map $M \rightarrow U$ with kernel $V$, then set $\tau:M \rightarrow M$ sending $\tau(m)=\frac{1}{[G:H]} \sum_{x \in G/H} x\pi(x^{-1}m)$, then we have $\tau(u)=u$ for $u \in U$ and $\tau(M) \subseteq U$. One immediately check that $\tau$ independent of the choice of $x$ and invariant under $G$.
+
+**Theorem**(maschke's theorem):
+Let $k$ be a field, $G$ be a finite field. If $|G|$ is invertable in $k$, then $J(k[G])=\{0\}$, hence every $k[G]$ module is semisimple. If not, then $z= \sum_{g \in G} g \in J(k[G])$.(c.f.[[representation note]])
+*Proof*:
+Recall that $J(k[N])k[G]=k[G]J(k[N]) \subseteq J(k[G])$ which takes equality when $[G:N]$ is invertable. So the first part is done(taking $N=\{1\}$). Taking $z:=\sum_{g \in G} J(k[G])$, one check that $z^2=|G|z=0$ and $zk[G]=k[G]z$, hence $z \in J(k[G])$.
+
+# [[Projective module and injective module]]
+**Definition**:
+Let $A$ be a k-algebra, an A-module $P$ is projective if there is a module $P'$ such that $P \oplus P'$ is a free A-module.
