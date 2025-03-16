@@ -72,3 +72,35 @@ Let $M$ be a finiely generated A-module, assume $I \subseteq A$, is a ideal, and
 ---
 # A quick view of homological algebra
 **Definition**:A sequence of A-module $\cdots\longrightarrow M_{i-1} \stackrel{f_i}{\longrightarrow} M_i \stackrel{f_{i+1}}{\longrightarrow} M_{i+1} \longrightarrow \cdots$ is called a *chain complex* if $f_{i+1} \circ f_{i}=0$ for all $i$, sepcifically, the complex is called *exact* if $ker(f_{i+1})=im(f_i)$ for all $i$. And define $H_i(M_\cdot)=ker(f_{i+!1})/im(f_i)$ the homology(cohomology) at $i$.
+
+**Definition**:
+A *functor* $F:Mod_A \rightarrow Mod_B$ is a function that preserve the multiplication of morphism and send $id$ to $id$. And $F$ is *additive* if $Hom(M,N) \rightarrow Hom(FM,FN)$ is a group homomorphism.
+**Example**:
+1. $Mod_A \rightarrow Mod_A$ sending $M \mapsto Hom(N,M)$ is covariant, and $M \mapsto Hom(M,N)$ is controvariant.
+
+**Definition**:
+$F:Mod_A \rightarrow Mod_B$ is a additive covariant functor.
+1. We say that $F$ is *left-exact* if for [[Short exact sequence]] $0 \longrightarrow M \longrightarrow N \longrightarrow R \longrightarrow 0$ we have $0 \longrightarrow FM \longrightarrow FN \longrightarrow FR$ are exact.
+2. We say that $F$ is *right-exact* if for [[Short exact sequence]] $0 \longrightarrow M \longrightarrow N \longrightarrow R \longrightarrow 0$ we have $FM \longrightarrow FN \longrightarrow FR \longrightarrow 0$ are exact.
+3. We say that $F$ is *exact* if it preserve the exactness of short exat sequence.
+
+**Proposition**(exact test):
+In the category $Mod_A$, the comlex $M' \longrightarrow M \longrightarrow M'' \longrightarrow 0$ is exact if for all $N$ the complex $0 \longrightarrow Hom(M',N) \longrightarrow Hom(M,N) \longrightarrow Hom(M'',N)$ is exact.
+*Proof*:
+$\Rightarrow$: easy.
+$\Leftarrow$: Take $N=M''/im(M \rightarrow M'')$, then one can check that this leads to $M'' \rightarrow 0$ is surjective. Taking $N=M/im(M' \rightarrow M)$, then one get $ker(M \rightarrow M'') \subseteq im(M' \rightarrow M)$, hence it is exact at $M$.
+
+**Proposition**:
+Let $F$ be left-exact, then there will be a *derived-functor* $R$ such that for any short exact sequence $0 \longrightarrow M \longrightarrow N \longrightarrow R \longrightarrow 0$ we have
+$$
+0 \longrightarrow FM \longrightarrow FN \longrightarrow FR \longrightarrow R^1FM \longrightarrow R^1FN \longrightarrow R^1FR \longrightarrow R^2FN \longrightarrow \cdots
+$$
+(Similiar thing is also true for controvariant functor)
+**Example**:
+Let $Hom(-,N):Mod^{op}_A \rightarrow Mod_A$ be left-exact, define $Ext^i(-,N)=R^iHom(-,N)$, and $Hom(M,-):Mod_A \rightarrow Mod_A$ be right-exact, define $Ext^i(M,-)=R^iHom(M,-)$. One can check that $Ext$ is well-defined, there are also another definition(c.f.[[First extension group]])
+
+**Definition**:
+1. If $Hom(P,-)$ is an exact functor then $P$ is projective.
+2. If $Hom(-,I)$ is an exact functor then $I$ is injective.
+(C.f.[[Projective module and injective module]])
+
