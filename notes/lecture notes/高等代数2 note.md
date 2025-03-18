@@ -191,3 +191,41 @@ $\mathbb{R} \subset \mathbb{C} \subset \mathbb{H}$: where $\mathbb{H}$ is the qu
 
 **Definition**:
 $\mathbb{H}$ is a 4 dimensional $\mathbb{R}$ vector space, which basis $1,i,j,k$ and multiplication $i^2=j^2=k^2=-1$ and $ij=k,jk=i,ki=j$, and span linearly to the multiplication of the ring(one can check that it is indeed a ring). Moreover, it is noncommutaive.
+One immediately know that we can embed $\mathbb{C} \hookrightarrow \mathbb{H}$ as a subring by $a+bi \mapsto a+bi$. Hence $\mathbb{H}$ became a $\mathbb{C}-v.s.$ by $(a+bi,q) \mapsto (a+bi)q$. One has $dim_{\mathbb{C}}\mathbb{H}=2$, with basis $\{1,j\}$.
+
+Consider the center $Z(\mathbb{H})$, assume $z=a+bi+cj+dk$, and using $zi=iz$, one get $c=d=0$, similiar arguments show that $b=c=d=0$, hence $Z(\mathbb{H})=\mathbb{R}$. Now we want to proof that $\mathbb{H}$ is a *division ring*, i.e. every nonzero emelent $z \in \mathbb{H}$ has an inverse.
+
+**Definition**:
+For $q \in \mathbb{H}$, let $\overline{q}:=a-bi-cj-dk$ to be its conjugate if $q=a+bi+cj+dk$ with trace $Tr(q):=q+\overline{q}=2a$, and norm $N(q):=q \cdot \overline{q}=a^2+b^2+c^2+d^2$.
+1. $q \mapsto \overline{q}$ is $\mathbb{R}$ linear, $\overline{\overline{q}}=q$.
+2. $\overline{q_1q_2}=\overline{q_2} \cdot \overline{q_1}$.
+3. $Tr:\mathbb{H} \rightarrow \mathbb{R}$ is $\mathbb{R}$-linear.
+4. $N(1)=1;N(q) \in \mathbb{R}$, $N(q_1q_2)=N(q_1)N(q_2)$ since $N(q_1q_2)=q_1q_2\overline{q_1q_2}=q_1q_2\overline{q_2}\overline{q_1}=q_1\overline{q_1}q_2\overline{q_2}=N(q_1)N(q_2)$.
+
+**Theorem**:
+$\mathbb{H}$ is a division ring. In fact $q^{-1}=N(q)^{-1}\overline{q}$
+*Proof*:
+Let $q=a+bi+cj+dk$, then $N(q)=a^2+b^2+c^2+d^2$, $\overline{q}=a-bi-cj-dk$, then $q \cdot N(q)^{-1}\overline{q}=N(q)^{-1}q\overline{q}=N(q)^{-1}N(q)=1$, the other side is similiar.
+**Remark**: Forbenius proved that: if $D$ a division $\mathbb{R}$-algebra, and $dim_\mathbb{R}D < \infty$, then $D \simeq \mathbb{R},\mathbb{C},\mathbb{H}$ as $\mathbb{R}$-algebra.
+
+There is a embedding of rings:
+$\Phi:\mathbb{H} \hookrightarrow M_{2 \times 2} (\mathbb{C})$ sending $z+jw \mapsto \begin{pmatrix}z&-\overline{w}\\ w&\overline{z}\end{pmatrix}$ where $z,w \in \mathbb{C}$. $\Phi(1)=id$ is clear, and using $jw=\overline{w}j$, one get $\Phi(p_1p_2)=\Phi(p_1)\Phi(p_2)$. Clearly $Tr$ of $\mathbb{H}$ $\leftrightarrow$ $Tr$ of $M_{2 \times 2}(\mathbb{C})$, and $N$ of $\mathbb{H}$ $\leftrightarrow$ $det$ of $M_{2 \times 2}(\mathbb{C})$.
+
+# Quaternions vs. rotations in $\mathbb{R}^3$
+$\mathbb{R}^3 \simeq \mathbb{H}_0:=\{q \in \mathbb{H}:\overline{q}=-q\}=\{q \in \mathbb{H}:Tr(q)=0\}=\{ai+bj+ck:a,b,c \in \mathbb{R}\}$ by sending $(a,b,c) \leftrightarrow ai+bj+ck=q$. If we transport this standard IP on $\mathbb{R}^3$, then $\Vert q \Vert^2=N(q)$.
+
+*Lemma*:
+1. $N(xqx^{-1})=N(q),\forall q \in \mathbb{H}$.
+2. We have an orthogonal transformation $R_x:q \mapsto xqx^{-1}$ on $\mathbb{H}_0$.
+3. $detR_x=1$.
+*Proof*:
+We proof the third one. Identify $\mathbb{H}$ with $\mathbb{R}^4$, then $\mathbb{H}_0$ corresponds to $\mathbb{R}^3$, so $R_x$ is identified with a $3 \times 3$ orthogonal matrix, hence $detR_x=\pm1$, and $R_x$ extries are continuous functions in $x \in \mathbb{H}^\times \simeq \mathbb{R}^4-\{0\}$. So $\mathbb{R}^4-\{0\} \rightarrow \{\pm 1\}$ is continuous, and $detR_1=1$, so we are done.
+
+Thus we have $R_xR_y=R_{xy},R_1=id,R_{x^{-1}}=R_{x}^{-1},R_{tx}=R_x$. Now we ask that whether these $R_x$ are all rotations in $\mathbb{R}^3$ ?
+
+**Theorem**:
+Let $T$ be a rotation in $\mathbb{H}_0$, then $\exists x \in \mathbb{H},N(x)=1$ s.t. $T=R_x$.
+*Proof*:
+Existence: Identify $\mathbb{H}_0$ with $\mathbb{R}^3$. Using Euler angle, $\exists \phi,\theta,\psi \in \mathbb{R}$ with $T=R_{e_1}(\psi)R_{e_2}(\theta)R_{e_3}(\phi)$, so we reduce to the case of $T=R_{e_l}(\psi)$.
+- l=1: Take $x=\cos \theta + \sin \theta \cdot i \in \mathbb{H}^{\times}$ with $N(x)=1$. Then $x^{-1}=\cos\theta-\sin\theta \cdot i$. Then $xix^{-1}=i,\ xjx^{-1}=\cos2\theta \cdot j+\sin2\theta \cdot k,\ xkx^{-1}=-\sin2\theta \cdot j+\cos2\theta \cdot k$, whence $R_x$ is in the form of $\begin{pmatrix}1&\\&R(2\theta)\end{pmatrix}$. The other two is similiar.
+Uniqueness: $R_x=R_y$, then $R_{xy^{-1}}=R_xR_y^{-1}=id$, so we only need to proof that if $R_x=id,N(x)=1$, then $x=\pm 1$. In fact, $R_x=id$ $\Rightarrow$ $xqx^{-1}=q$ for all $q \in \mathbb{H}_0$, hence $xqx^{-1}=q$ for all $q \in \mathbb{H}$, so $x \in Z(\mathbb{H})$, thus $x=\pm 1$. 
