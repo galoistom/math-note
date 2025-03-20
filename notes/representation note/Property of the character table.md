@@ -9,7 +9,7 @@ For two class function $f_1,f_2$ over $G$, define $<f_1,f_2>=\sum\limits_{s \in 
 
 **Proof:**
 	We will use the two following facts:
-	$$\chi_{V_1} \times \chi_{V_2} = \chi_{V_1 \otimes V_2},\, \overline{\chi_{V}}=\chi_{V^*},V_1 \otimes V_2^* \simeq Hom(V_1,V_2)$$
+	$$\chi_{V_1} \cdot \chi_{V_2} = \chi_{V_1 \otimes V_2},\, \overline{\chi_{V}}=\chi_{V^*},V_1 \otimes V_2^* \simeq Hom(V_1,V_2)$$
 	Thus, $\frac{1}{Card(G)}\sum\limits_{g \in G} \chi_1(g) \overline{\chi_2(g)}=\frac{1}{Card(G)}\sum\limits_{g \in G} \chi_{Hom(V_1,V_2)}(g)$, multiply it by $\chi_{Hom(V_1,V_2)}(t)$, we gathered that either  $\chi_{Hom(V_1,V_2)}=1$ or $\chi_{Hom(V_1,V_2)}=0$ . #
 	Another proof is using the [[Schur's lemma]], it shows that $Hom(V_1,V_2)$ is either isomorphic to the trivial representation space or 0, and the former case occurs only when $V_1 \simeq V_2$.
 
@@ -31,6 +31,6 @@ For two class function $f_1,f_2$ over $G$, define $<f_1,f_2>=\sum\limits_{s \in 
 >For every $f$ a class function over $G$, there exists $\lambda_1,\dots,\lambda_k$ such that $f=\sum\limits_{i=1}^{k} \lambda_i\chi_i$.
 
 **Proof:**
-	Assume the contrary, there exists a $f \neq 0$ such that $<f,\chi_i>=0$ for all $i = 1,\dots,k$ .
+	Assume the contrary, there exists a $f \neq 0$ such that $\langle f,\chi_i \rangle=0$ for all $i = 1,\dots,k$ .
 	Define $\rho_f = \sum\limits_{s \in G} f(s)\rho_s$ for all linear representation $(V,\rho)$ , then $$\rho_t\rho_f\rho_t^{-1}=\sum_{s \in G} f(s)\rho_t\rho_s\rho_t^{-1}=\sum_{s \in G} f(tst^{-1})\rho_{tst^{-1}}=\rho_f$$
 	letting $(V,\rho)$ be irreducible, from [[Schur's lemma]] we know that $\rho_f=\lambda \cdot id$ , with $\lambda=<f,\chi_i>=0$ , thus $\rho_f=0$  for all $\rho$ irreducible. Hence $f=0$ , contracting the assumption.# 
