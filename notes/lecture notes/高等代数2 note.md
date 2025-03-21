@@ -1,14 +1,14 @@
 # adjoint function
-Let $T:V \rightarrow W$ be a linear transformation and $V$ has a symmetric bilinear mesures, then $T^*:W \rightarrow V$ is called the adjoint function if and only if $(Tv_1|v_2)=(v_1|T^*v_2)$ for all $v_1,v_2 \in V$.
+Let $T:V \rightarrow W$ be a linear transformation and $V$ has a symmetric bilinear measures, then $T^*:W \rightarrow V$ is called the adjoint function if and only if $(Tv_1|v_2)=(v_1|T^*v_2)$ for all $v_1,v_2 \in V$.
 Recall that $ker(T)=ker(T^*T:V \rightarrow V)$, and that $T^*T \in End(V),TT^* \in End(W)$, both are self-adjoint and positive semidefinite.
 
 # SVD
-Let $T:V \rightarrow W$ be linear transformation and $n=dim(V),m=dim(W)$, then there is a ONB(单位正交基) $v_1,v_2, \cdots,v_n$ and $w_1,w_2,\cdots,w_m$ and $\sigma_1\geq\sigma_2\geq\cdots\geq\sigma_q$, $q=\min\{m,n\}$, such that $Tv_i=\sigma_i w_i$ if $1 \leq i \leq p$ and $Tv_i=0$ if not. The $(\sigma_i)$ are uniquely determined by $T$ which is called the sigular value of $T$. Using the language of matrix, then it is that for any $A \in M_{n \times m}(\mathbb{R})$, then there is $P \in SO(m),Q\in SO(n)$ such that $Q^{-1}AP$ is sort of "diagonal".
+Let $T:V \rightarrow W$ be linear transformation and $n=dim(V),m=dim(W)$, then there is a ONB(单位正交基) $v_1,v_2, \cdots,v_n$ and $w_1,w_2,\cdots,w_m$ and $\sigma_1\geq\sigma_2\geq\cdots\geq\sigma_q$, $q=\min\{m,n\}$, such that $Tv_i=\sigma_i w_i$ if $1 \leq i \leq p$ and $Tv_i=0$ if not. The $(\sigma_i)$ are uniquely determined by $T$ which is called the singular value of $T$. Using the language of matrix, then it is that for any $A \in M_{n \times m}(\mathbb{R})$, then there is $P \in SO(m),Q\in SO(n)$ such that $Q^{-1}AP$ is sort of "diagonal".
 **We proof the uniqueness**: We claim that $T^*w_j=\sigma_jv_j$ if $j \leq p$. We let $S$ to satisfy the condition, then $(v_i|Sv_j)=\sigma_j \delta_{ij}$, note that $(Tv_i|v_j)=\sigma_i\delta_{ij}$, then we have $(T|\cdot)=(\cdot|S)$, hence $S=T^*$. After that, we note that $\sigma_i^2$ is the eigenvalue of $T^*T$, so the $\sigma_i$ are uniquely determined.(Using the above result, we can easily construct the $P,Q$, so existence is clear)
 
 # MP inverse
 Let $T:V \rightarrow W$ and $S:W \rightarrow V$, we say $S$ is the MP inverse of $T$ if and only if:1.$STS=S$ 2.$TST=T$ 3.$(ST)^*=ST$ 4.$(TS)^*=TS$. We will proof that this inverse is unique.
-**The existence:** Let $v \in V, w \in W, v' \in ker(T), v'' \in ker(T)^{\perp}, w' \in im(T), W'' \in im(T)^\perp$ with $v=v'+v'',w=w'+w''$ and $Tv=w'$ we set $Sw:=v''$. It is easy to check that $S$ is well defined. As to the uniquess, suppose $S,R$ are both MP inverse of $T$, then we have 
+**The existence:** Let $v \in V, w \in W, v' \in ker(T), v'' \in ker(T)^{\perp}, w' \in im(T), W'' \in im(T)^\perp$ with $v=v'+v'',w=w'+w''$ and $Tv=w'$ we set $Sw:=v''$. It is easy to check that $S$ is well defined. As to the uniqueness, suppose $S,R$ are both MP inverse of $T$, then we have 
 $$
 S=STS=S(TS)^*=SS^*T^*=SS^*(TRT)^*=SS^*T^*R^*T^*=S(TS)^*(TR)*=STSTR=STR
 $$
@@ -170,6 +170,7 @@ Proof:Let $S=T+T^{-1}$ then $V= \oplus_{\lambda \in [-2,2]} V_\lambda$, where $V
 
 Next we will consider the spectural case of $dimV=3$. 
 Definition: We say $T \in End(V)$ is a ratation if $T$ is orthogonal, $det(T)=1$.
+
 **Definition**:
 Let $V:IPS/\mathbb{R}$ dimV=3. A rotation in $V:=$ orthogonal $T \in End(V)$ with $det(T)=1$.
 
@@ -229,3 +230,43 @@ Let $T$ be a rotation in $\mathbb{H}_0$, then $\exists x \in \mathbb{H},N(x)=1$ 
 Existence: Identify $\mathbb{H}_0$ with $\mathbb{R}^3$. Using Euler angle, $\exists \phi,\theta,\psi \in \mathbb{R}$ with $T=R_{e_1}(\psi)R_{e_2}(\theta)R_{e_3}(\phi)$, so we reduce to the case of $T=R_{e_l}(\psi)$.
 - l=1: Take $x=\cos \theta + \sin \theta \cdot i \in \mathbb{H}^{\times}$ with $N(x)=1$. Then $x^{-1}=\cos\theta-\sin\theta \cdot i$. Then $xix^{-1}=i,\ xjx^{-1}=\cos2\theta \cdot j+\sin2\theta \cdot k,\ xkx^{-1}=-\sin2\theta \cdot j+\cos2\theta \cdot k$, whence $R_x$ is in the form of $\begin{pmatrix}1&\\&R(2\theta)\end{pmatrix}$. The other two is similiar.
 Uniqueness: $R_x=R_y$, then $R_{xy^{-1}}=R_xR_y^{-1}=id$, so we only need to proof that if $R_x=id,N(x)=1$, then $x=\pm 1$. In fact, $R_x=id$ $\Rightarrow$ $xqx^{-1}=q$ for all $q \in \mathbb{H}_0$, hence $xqx^{-1}=q$ for all $q \in \mathbb{H}$, so $x \in Z(\mathbb{H})$, thus $x=\pm 1$. 
+
+**Corollary**:
+Let $u \in \mathbb{H}_0$, $N(u)=1$, and $\theta \in \mathbb{R}$, then $R_u(\theta)$ a rotation around $u$ with degree $\theta$, is equal to $R_x$, where $x=\cos\frac{\theta}{2}+\sin\frac{\theta}{2}u$.
+*Proof*:
+One can check that $\overline{u}=-u$, then $N(x)=\cos^2\frac{\theta}{2}-\sin^2\frac{\theta}{2}u^2$, and note $1=u\overline{u}=-u^2$, hance $N(x)=1$. If $u=i$, then we know that $R_u(\theta)=R_x$. In general, there is a rotation $P$ in $\mathbb{H}_0 \simeq \mathbb{R}^3$, such that $P(i)=u$, know: $R_u(\theta)=PR_i(\theta)P^{-1}=R_yR_i(\theta)R_{y^{-1}}=R_x$, whence $x=y(\cos\frac{\theta}{2}+\sin\frac{\theta}{2}i)y^{-1}=\cos\frac{\theta}{2}+\sin\frac{\theta}{2}u$.
+*Remark*:
+1. there is a 2 to 1 mapping $\{1 \in \mathbb{H}^\times,\, N(x)=1\} \twoheadrightarrow \{\text{rotation in } \mathbb{H}_0 \simeq \mathbb{R}^3\}$.
+2. $R_u(\theta)=R_x$ (let $\psi:=\frac{\theta}{2}$), then $x=e^{\psi u}=\sum_{n=0}^{\infty}\frac{\psi^nu^n}{n!}=\cos\psi+\sin\psi u$, which is to say $e^{i\psi}=\cos\psi+\sin\psi i$.
+
+# 对称多项式
+**Definition**:
+1. Ring: is a set $R$ with commutative "+" and a multiplication "$\cdot$" with "1".
+2. Division ring: A ring $\neq \{0\}$ such that $R^{\times}=R-\{0\}$.
+3. field: A commutative division ring.
+
+Now fix a field $F$, and $n \in \mathbb{Z}_{\geq 1}$. $S_n$ is the symmetric group. $\forall f \in F[x_1, \cdots,x_n], \forall \sigma \in S_n$, set $(\sigma f):=f(x_{\sigma(1)},\cdots,x_{\sigma(n)}) \in F[x_1,\cdots,x_n]$. Then $idF=F,(\sigma\tau) f=\sigma(\tau f)$.
+
+**Definition**:
+If $f \in F[x_1,\cdots,x_n]$ satisfies $\forall \sigma \in S_n$, $\sigma f=f$. We say that $f$ is a symmetric polynomial (in n variables)/$F$. $F[x_1, \cdots, x_n]^{S_n}:=\{symmetric \ f\}$. 
+It is a subring of $F[x_1,\cdots,x_n]$.
+elementary symmetric polynomials: $e_k:=\sum\limits_{1 \leq i_1 < \cdots < i_k \leq n}x_{i_1} \cdots x_{i_n},\forall 1 \leq k \leq n$. $e_1=\sum_i x_i$, $e_n=\prod_ix_i$, set $e_0=1$. then $(y+x_1) \cdots (y+x_n)=\sum_ie_iy^i$. 
+
+**Theorem**(对称多项式基本定理--存在性):
+$\forall f\in F[x_1,\cdots,x_n]^{S_n}, \exists g \in F[x_1,\cdots,x_n]$ s.t. $f=g(e_1,\cdots,e_n)$.
+*Proof*:
+For all $f \in F[x_1,\cdots,x_n]$, write $f=\sum_df_d$ where $f_d:=\sum\limits_{i_1+\cdots+i_n=d}x_1^{i_1}\cdots x_n^{i_n}$ are d-homogeneous part of $f$. If $f=\sum\limits_{i_1,\cdots,i_n\geq 0}C_{i_1,\cdots,i_n}x_1^{i_1}\cdots x_n^{i_n}$, when $f=f_d$, we say $f$ is homogeneous of set $degf:=\begin{cases}\max\{d \geq 0:f_d \neq 0\} &\text{ if }f \neq 0\\-\infty &\text{ if } f=0\end{cases}$. 
+*Lemma*: Let $f \in F[x_1,\cdots,x_n]^{S_n}$. Then $f(x_1,\cdots,x_{n-1},0)=0 \Leftrightarrow e_n|f$. (easy)
+Let $f \in F[x_1,\cdots,x_n]^{S_n}$, $\forall d \geq 0$, $f_d$ is symmetric, so we may assume $f=f_d$, for some $d$. $\forall g \in F[x_1,\cdots,x_n]$, define its weight $wt(g):=\begin{cases}\max{\sum_{k=1}^{n}ki_k:C_{i_1,\cdots,i_n} \neq 0},& g \neq 0\\-\infty &g=0\end{cases}$. To show: If $f=f_d$, then $\exists g$ s.t. $wt(g) \leq d$, and $f=g(e_1,\cdots,e_n)$. Induction on $n+d$. If $d=0$, then $f \in F$, and we can take $g=f$, and $wt(g) \leq 0$. Assume $d \geq 1$, $\forall h \in F[x_1, \cdots,x_n]$, set $h^{\mathfrak{b}}:=h(x_1,\cdots,x_{n-1},0)\in F[x_1,\cdots,x_n]$, $n=1 \Rightarrow$ element of $F$. $h^{\mathfrak{b}}$ is symmetric in $n-1$ variables, $f^\mathfrak{b}$ still homogeneous of degree $d$ that is symmetric. Using induction, there is a $g_1 \in F[x_1, \cdots,x_{n-1}]$ s.t. $f^\mathfrak{b}=g_1(e_1^{\mathfrak{b}},\cdots,e_n^{\mathfrak{b}})$, and $degg_1(e_1^{\mathfrak{b}},\cdots,e_n^{\mathfrak{b}}) \leq wt(g_1) \leq d$. Hence $f_1=f-g_1(e_1,\cdots,e_{n-1})$ has degree $\leq d$, is symmetric and $f_1^{\mathfrak{b}}=f^{\mathfrak{b}}-g_1(e_1^{\mathfrak{b}},\cdots,e_{n-1}^{\mathfrak{b}})=0$. using the lemma, one get $e_n|f_1$, let $f_2:=\frac{f_1}{e_n}$ is symmetric, and $degf_2 \leq d-n$. Using induction, then the theorem is proved.
+(it is easier to understand if one just pick the elements in $f$ where $x_1$ has the highest degree, then extend them to symmetric, using induction).
+
+**Theorem**(对称多项式基本定理--唯一性):
+If $g_1(e_1,\cdots,e_n)=g_2(e_1,\cdots,e_n)$, then $g_1=g_2$.
+*Proof*:
+We only need to show $g \in F[x_1,\cdots,x_n]$, if $g(e_1,\cdots,e_n)=0$, then $g=0$.
+1. May enlarge the field $F$. May assume $F$ is infinite (sending finite feld $F \hookrightarrow F(t)$).
+2. $F$ infinite, $g \neq 0$, then there is a $(y_1, \cdots,y_n) \in F^{n}$ s.t. $g(y_1, \cdots,y_n)$.
+3. Consider $p:=x^n-y_1x^{n-1}+ \cdots+(-1)^{n}y_n$, then there is a extension fields $F \hookrightarrow L$ s.t. $p$ split in $L[x]:p=\prod_i(x-x_i)$, hence $e_k(x_1, \cdots, x_n)=y_k$, so $g(e_1, \cdots,e_n) \neq 0$.
+
+*Facts*: $F$ infinite field, $g \in F[x_1, \cdots,x_n],g \neq 0$ then there is a $(y_1, \cdots,y_n) \in F^n$, $g(y_1,\cdots,y_n) \neq 0$. Using induction, $n=1$ clear, if $n>1$, take $(g_1,\cdots,g_{n-1})$, such that $g_k(y_1,\cdots,y_k) \neq 0$, then see $g$ as a polynomial of $x_n$ .
+*Remark*: If $F$ is a subfield of $\mathbb{C}$, then we may work as $\mathbb{C}$

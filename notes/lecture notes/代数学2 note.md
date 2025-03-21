@@ -66,7 +66,7 @@ In general it is not correct, consider $\mathbb{Z}[\sqrt{-1}]$ as an example: $(
 
 **Definition**: Free modules are modules that are isomorphic to $A^I:= \bigoplus_{i \in I} A$. 
 
-**Theorem**(Nakayama Lemma):(c.f.[[[Block theory]]])
+**Theorem**(Nakayama Lemma):(c.f.[[Block theory]]])
 Let $M$ be a finiely generated A-module, assume $I \subseteq A$, is a ideal, and if $I$ is contained in the jacobradical of $A$, then if $IM=M$, we have $M=0$.
 
 ---
@@ -104,3 +104,54 @@ Let $Hom(-,N):Mod^{op}_A \rightarrow Mod_A$ be left-exact, define $Ext^i(-,N)=R^
 2. If $Hom(-,I)$ is an exact functor then $I$ is injective.
 (C.f.[[Projective module and injective module]])
 
+**Theorem**(Snake lemma):
+In the category $Mod_A$, the diagram below is exact and commutative,
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+&0 \arrow[r] &M' \arrow[r,"u"] \arrow[d,"f'"] &M \arrow[r,"v"] \arrow[d,"f"] &M'' \arrow[r] \arrow[d,"f''"] &0\\
+&0 \arrow[r] &N' \arrow[r,"u'"] &N \arrow[r,"v'"] &N'' \arrow[r] &0
+\end{tikzcd}
+\end{document}
+```
+Then the following are exact:
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+&0 \arrow[r] &kerf' \arrow[r,"\overline{u}"] &kerf \arrow[r,"\overline{v}"] &kerf'' \arrow[r,"\delta"] &cokerf' \arrow[r,"\overline{u'}"] &cokerf \arrow[r,"\overline{v'}"] &cokerf'' \arrow[r] &0
+\end{tikzcd}
+\end{document}
+```
+*Proof*:
+Simple, using the technique of diagram chasing. In fact, the only thing we need to check is those involves $\delta$. The definition of $\delta$ is clear, simply taking an element in $x \in ker(f)$, such that $vy=x$, $y \in M$, then we have $v'fy=f''x=0$, so $fy \in im(u')$, suppose $u'z =fy$. One set $\delta x=z$. It is clear that $\delta$ is well-defined. Using the similiar technique, one can proof the lemma.
+
+**Theorem**(five lemma):
+Cosider the following diagram with exact rows:
+```tikz
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+&A \arrow[r] \arrow[d,"f_A"] &B \arrow[r] \arrow[d,"f_B"] &C \arrow[r] \arrow[d,"f_C"] &D \arrow[r] \arrow[d,"f_D"] &E \arrow[d,"f_E"]\\
+&A' \arrow[r] &B' \arrow[r] &C' \arrow[r] &D' \arrow[r] &E'
+\end{tikzcd}
+\end{document}
+```
+1. If $f_A,f_B,f_D,f_E$ are both isomorphism, then $f_C$ is also isomorphism.
+2. If $f_B,f_D$ are injective, $f_A,f_E$ are surjective, then $f_C$ is injective.
+3. If $f_B,f_D$ are surjective, $f_A,f_E$ are injective, then $f_C$ is surjective.
+*Proof*:
+classical exercise for diagram chasing.
+
+**Definition**:
+A set $S \subseteq A$ is a multiplicative closed subset if $S$ is closed under multiplication and $1 \in S$. And for a multiplicative closed subset $S$, there is a $S^{-1}A$ unique up to isomorphism, such that every element $\frac{a}{s} \in S^{-1}A$ can be chosen $a \in A,s \in S$, and a map $f:A \rightarrow S^{-1}A$ sending $a \mapsto \frac{a}{1}$, such that $\forall g:A \rightarrow B$ a ring homomorphism, there is a unique $h:S^{-1}A \rightarrow B$ such that $hf=g$. And the explicit construction is $A \times S$ quotient out by the equvalient relation:$\frac{a_1}{s_1}=\frac{a_2}{s_2}$, if there is a $s \in S$ such that $s(s_1a_2-s_2a_1)=0$.
+
+Sepcifically, $A_{\mathfrak{p}}=(A-\mathfrak{p})^{-1}A$ is the localization of $\mathfrak{p}$, which is a locla ring, with residue field $A_{\mathfrak{p}}/\mathfrak{p}A_{\mathfrak{p}}$. And if $A$ is integral domain, then $(0) \in Spec(A)$, and $A_{(0)}=(A-(0))^{-1}A$ is the field of fraction of $A$. For $f \in A$, write $A_f=(f)^{-1}A=A[\frac{1}{f}]$ 
+
+One should note that the action of localization is exact so it behave very nicely in most condition. It is also easy to extend the idea to modules of $A$.
+
+**Proposition**:
+the map $M \rightarrow \prod_\mathfrak{m} M_\mathfrak{m}$, where $\mathfrak{m}$ runs through the maximal ideals of $A$, is injective.
+*Proof*:
+Consider $I=Ann(x)$ is a nontrival ideal, then there must be a maximal ideal $\mathfrak{m}$ containing $I$, then consider $M_\mathfrak{m}$, one know that there must be some $y \in A-\mathfrak{m}$ such that $xy=0$, contradiction.
