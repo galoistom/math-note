@@ -136,3 +136,35 @@ Moreover, the equation $\frac{1}{|G|}\sum_gR^{(k)}_{pm}(g)\overline{R^{(l)}_{qn}
 Using the fact that every representation of finite group is unitraty, then $\chi(g^{-1})=\overline{\chi(g)}$. so we get :
 **Theorem**:
 If $\chi$ and $\phi$ are character for irreducible representation $R,S$, of finite group $G$, then $R,S$ are equivalent if $\chi=\phi$.
+and:
+**Theorem**:
+If $\chi,\phi$ are characters of two irreducible representations of finite group $G$, then $(\chi,\phi):=\frac{1}{|G|}\sum_{g \in G}\chi(g)\phi(g^{-1})=\begin{cases}1 &\text{ if } \chi=\phi\\0 &\text{ if not}\end{cases}$. Using this, one find a way to compute whether two representation are equivalent.
+
+Note that $\chi(g)=Tr|_V(g)$, is the sum of all eigenvalues of $\rho_g$, one alos have $\rho_{g^{-1}}=\rho_g^{-1}$. Note that $|G|<\infty$, then there is $n \in \mathbb{Z}$ such that $g^n=1$, so $\rho_g^n=id$, so all eigenvalues of $\rho_g$ are n-th root of unity. So one get that the $\chi(g^{-1})=\overline{\chi(g)}$. 
+
+Now we get the orthogonality relation between characters. Take $V_1,\cdots,V_s$ be the set of all irreducible representations different up to isomorphism. Let $\chi_1, \cdots, \chi_s$ be their characters, then $(\chi_i,\chi_j)=\delta_{ij}$. So they form an orthogonol basis for the vector space of class functions, in particular $s$ is euqal to the number of conjugacy classes of $G$. The character table has a row for each irreducible representations, and one column for each conjugacy classes, the entry are $\chi_i(g)$ if $g$ is in the j-th conjugacy classes. One immediatly know that $|\chi_k|<d_k$ where $d_k=dim(V_k)$.
+
+**Example**:
+$$
+\begin{array}{c|lcr} 
+& g_1 & g_2 & g_3 & g_4 & g_5 & g_6\\ 
+\hline 
+\chi_1 & 1 & 1 & 1 & 1 & 1 &1 \\ 
+\chi_2 & 3 & -1 & 1 & 0 & \frac{-1+i\sqrt{7}}{2} & \frac{-1-i\sqrt{7}}{2} \\ 
+\chi_3 & 3 & -1 & 1 & 0 & \frac{-1-i\sqrt{7}}{2} & \frac{-1+i\sqrt{7}}{2}\\
+\chi_4 & 6 & 2 & 0 & 0 & -1 & -1\\
+\chi_5 & 7 & -1 & -1 & 1 & 0 & 0\\
+\chi_6 & 8 & 0 & 0 & -1 & 1 & 1
+\end{array}
+$$
+$|G|=1^2+3^2+3^2+6^2+7^2+8^2=168$.
+
+Regarding the character table as the $s \times s$ matrix with the $(k,j)$-entry $\chi_k(g_j)$. Let $U$ be the $s \times s$ matrix whose $(j,l)$-entry is $\frac{1}{|G|}h_j\overline{\chi_j(g_j)}$, then $(TU)_{k,l}=\frac{1}{|G|}\sum_jh_j\chi_k(g_j)\overline{\chi_l(g_j)}=\delta_{kl}$, ($h_j$ is the number of elements in the conjugacy classes of $g_j$)
+
+**Definition**:
+The center of a group $G$ denoted by $Z(G)$ is the set of all $a \in G$ that commute with all elements of $G$, i.e. $Z(G):=\{a \in G:ag=ga,\,\forall g \in G\}$. And $C_G(a):=\{g \in G:ag=ga\}$ is the set of all $g \in G$ that commute with $a$.
+
+**Proporsition**:
+If $a \in G$, then the number of elements in the conjugacy classes containing a is equal to $[G:C_G(a)]$. 
+
+Using the proporsition above, one get $\sum_j\chi_l(g_j)\overline{\chi_k(g_j)}=\delta_{jk}|C_G(g_j)|$.
