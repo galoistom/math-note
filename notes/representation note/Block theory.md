@@ -61,10 +61,10 @@ The algebra satisfying the above theorem are called *Hopf algebra*. the second e
 
 We want some how extend these maps to the twisted group algebra, then we get that the map sending $g \mapsto \alpha(g,g^{-1})g^{-1}$ where $g \in G$ induced an isomorphism $(k_\alpha[G])^{op} \simeq k_{\alpha^{-1}}G$, and that if $\gamma=\alpha\beta$ then there is a natural injective k-algebra homomorphism $k_\gamma[G] \rightarrow k_\alpha[G] \otimes_k k_\beta[G]$, and $k_\gamma[G]$ is a direct summand of $k_\alpha[G] \otimes_k k_\beta[G]$ as a $k_\gamma[G]-k_\gamma[G]$ bimodule.
 
-# Blocks and indempotent
+# Blocks and idempotent
 Given two k-algebra $B,C$, set the carstesian product $B \times C$ with the componentwise sum ans multiplication, together with the canonical projections onto $B$ ans $C$, is the direct product of $B,C$ in the category of k-algebra. Let $A$ be an k-algebra, a subalgebra $B$ is a direct factor if there is a split surjective $A-A$ bimodule homomorphism $\tau:A \rightarrow B$.
 
-Let $A$ be a k-algebra, and $b \in Z(A)$ be an indempotent, then $Ab:=\{ab:a \in A\}$ is a k-algebra with unit $b$. one  immediately know that $A(1-b)$ is also a k-algebra, and that $A=Ab \times A(1-b)$ as k-algebra. The following theorem bridge the connection between the two concept above.
+Let $A$ be a k-algebra, and $b \in Z(A)$ be an idempotent, then $Ab:=\{ab:a \in A\}$ is a k-algebra with unit $b$. one  immediately know that $A(1-b)$ is also a k-algebra, and that $A=Ab \times A(1-b)$ as k-algebra. The following theorem bridge the connection between the two concept above.
 
 **Theorem**:
 Let $A$ be a k-algebra, $B$ a k-submodule of $A$, then the following are equivalent:
@@ -72,12 +72,12 @@ Let $A$ be a k-algebra, $B$ a k-submodule of $A$, then the following are equival
 2. B is a direct factor of A as a k-algebra.
 3. B=Ab for sum idempotent b in Z(A).
 *Proof*:
-Suppose (1) holds, let $A=B \oplus N$ as an A-A-bimodule. Notice that $BN \subset B \cap N \{0\}$, and write $1_A=b+n$, then $b=b \cdot 1_A=b^2+bn=b^2$ so $b$ is an indempotent, the same argument shows that $n$ is indempotent, so they are orthogonal. Write $a=c+r$ for some $c \in B,r \in N$, and $a=ab+an=ba+na$, so $b,n \in Z(A)$, and $B=Ab,N=An$.
-Suppose (2) holds, let $A=B \times C$, then $1_A=(1_B,0)+(0,1_C)$ and $(1_B,0),(0,1_C)$ are orthogonal indempotent in $Z(A)$. Setting $b=(1_B,0)$, then $B=Ab$.
+Suppose (1) holds, let $A=B \oplus N$ as an A-A-bimodule. Notice that $BN \subset B \cap N \{0\}$, and write $1_A=b+n$, then $b=b \cdot 1_A=b^2+bn=b^2$ so $b$ is an idempotent, the same argument shows that $n$ is idempotent, so they are orthogonal. Write $a=c+r$ for some $c \in B,r \in N$, and $a=ab+an=ba+na$, so $b,n \in Z(A)$, and $B=Ab,N=An$.
+Suppose (2) holds, let $A=B \times C$, then $1_A=(1_B,0)+(0,1_C)$ and $(1_B,0),(0,1_C)$ are orthogonal idempotent in $Z(A)$. Setting $b=(1_B,0)$, then $B=Ab$.
 Suppose (3) holds, let $B=Ab$, and $C=A(1-b)$, then $A=B \oplus C$ as A-A-bimodule, and $A=B \times C$ as k-algebra.
 
 **Definition**:
-Let $A$ be a k-algebra. A *block* of $A$ is a primitive indempotent $b$ in $Z(A)$; the algebra $Ab$ is called a *block algebra* of $A$.
+Let $A$ be a k-algebra. A *block* of $A$ is a primitive idempotent $b$ in $Z(A)$; the algebra $Ab$ is called a *block algebra* of $A$.
 
 **Theorem**:
 Suppose that k is noetherian. Let $A$ be a k-algebra such that $Z(A)$ is finitly generated as a k-module. Then $Z(A)$ is noetherian, and the following hold.
@@ -85,7 +85,7 @@ Suppose that k is noetherian. Let $A$ be a k-algebra such that $Z(A)$ is finitly
 2. $A=\prod_{b \in \mathcal{B}} Ab$ is the uniuqe decomposition of $A$ as a direct product of indecomposable k-algebras.
 3. $A=\oplus_{b \in \mathcal{B}}Ab$ is the unique decomposition of $A$ as direct sum of indecomposable A-A-bimodule.
 *Proof*:
-Since $k$ is noetherian and $Z(A)$ is finitly generated as k-module, so $Z(A)$ is noetherian. Let $b \in \mathcal{B}$, and $c \in Z(A)$ is another primitive indempotent such that $bc \neq 0$. Then one have $b=bc+b(1-c)$, where $bc,b(1-c)$ are indempotent in $Z(A)$ but $b$ is primitive, so one must have $b(1-c)=0,b=bc$, the same agrument shows that $c=cb=bc=b$. The rest it then clear.
+Since $k$ is noetherian and $Z(A)$ is finitly generated as k-module, so $Z(A)$ is noetherian. Let $b \in \mathcal{B}$, and $c \in Z(A)$ is another primitive idempotent such that $bc \neq 0$. Then one have $b=bc+b(1-c)$, where $bc,b(1-c)$ are idempotent in $Z(A)$ but $b$ is primitive, so one must have $b(1-c)=0,b=bc$, the same agrument shows that $c=cb=bc=b$. The rest it then clear.
 
 In view of abilian category, there is no much difference between direct product and direct sum, and coproduct coincides with tensor product. That's why the decomposition of $A$ to its block yealds a direct sum and a direct product.
 
@@ -159,7 +159,7 @@ an ideal $I$ of $A$ is called *nilpotent* if there is a positive integer $n$ suc
 Let $A$ be a k-algebra
 1. the set $1+J(A)$ is subgroup of $A^\times$.
 2. the radical $J(A)$ contains every nilpotent in $A$.
-3. the radical $J(A)$ contains no indempotent.
+3. the radical $J(A)$ contains no idempotent.
 4. for any ring automorphism $\alpha$ of $A$, we have $\alpha(J(A))=J(A)$. In particular, if a group $G$ acts on $A$ by a ring automorphism, then $J(A)$ is a $G$-set.
 *Proof*:
 Let $a \in J(A)$, then consider $A=Aa+A(1-a)=J(A)+A(1-a)$, using the nakayama's lemma, one get $A=A(1-a)$, so $1-a$ has a inverse $1-b$ where $b=ba-a \in J(A)$, so we have (1). To proof (2), consider $IS$ for some simple module $S$ of $A$, which must be either $\{0\}$ of $S$, but the letter is impossible, because $I^nS=\{0\}$. (3) is obvious. (4) is just consider the module $_\alpha S$ on which $a \in A$ acts as $\alpha(a)$, then one immediately know that the map sending $S\, \mapsto \,_\alpha S$ is a one to one map, so one get that $J(A)$ is invariant under $\alpha$.
@@ -195,7 +195,7 @@ Let $A$ be a k-algebra and let $e$ be an idempotent in $A$.
 Suppose that $eS \neq \{0\}$, then we take a nonzero $eAe$ submodule $V$ of $eS$. Then $S=AV=AeV$, so $eS=eAeV$ is a simple module of $eAe$.
 Let's consider $A \otimes_{eAe} T=Ae \otimes_{eAe} T$, which is a nonzero $eAe$ module, so there is a maximal submodule $M$. Let $S:=A \otimes_{eAe} T/M$ be a simple A-module, then we get  a surjective map $\pi:A \otimes_{eAe} T \rightarrow S$,  which leads to a map $T \rightarrow eS$, we need to check that the map is not 0, which is easy, noticing that $e \otimes T$ generated $A \otimes T$. 
 *Remark*: 
-the two proof is silimiar to the concept of $Res$ and $Ind$, the most important thing is that $A=Ae$ as $eAe$-module. And $M$ is chosen to help as get a simple A-module $S$ such that $\pi$ does not act as 0 when restriced to $T$. one may also proof that $M$ is unique, in fact, the is the biggest submodule with $eM=\{0\}$. As in the iduced representation, we can get the same $S$ using $Hom_{eAe}(A,T)$. 
+the two proof is silimiar to the concept of $Res$ and $Ind$, the most important thing is that $A=Ae$ as $eAe$-module. And $M$ is chosen to help as get a simple A-module $S$ such that $\pi$ does not act as 0 when restriced to $T$. one may also proof that $M$ is unique, in fact, the is the biggest submodule with $eM=\{0\}$. As in the induced representation, we can get the same $S$ using $Hom_{eAe}(A,T)$. 
 
 **Theorem**:
 Let $A$ be an artinian algebra, $M$ be a finitly generated A-module, and $J$ a proper ideal of $A$.
@@ -239,7 +239,7 @@ Recall that $J(k[N])k[G]=k[G]J(k[N]) \subseteq J(k[G])$ which takes equality whe
 **Definition**:
 Let $A$ be a k-algebra, an A-module $P$ is projective if there is a module $P'$ such that $P \oplus P'$ is a free A-module.
 **Examples**:
-Let $A$ be a k-algebra and let $i$ be an indempotent in $A$. Then the left module $Ai$ is projective (note that $A=Ai \oplus A(1-i)$).
+Let $A$ be a k-algebra and let $i$ be an idempotent in $A$. Then the left module $Ai$ is projective (note that $A=Ai \oplus A(1-i)$).
 
 **Theorem**:
 Let $A$ be a k-algebra, and let $P$ be an A-module. The following are equivalent:
@@ -270,7 +270,7 @@ Let $A$ be a k-algebra and $P$ an A-module. The following are equivalent:
 3. The canonical evaluation map $Hom_A(P,A) \otimes_A P \rightarrow Hom_A(P,P)$.
 4. there is a finite subset $S$ in $P$ and for every $s \in S$, an A-homomorphism $\psi_s:P \rightarrow A$ such that $\sum_{s \in S}\psi_s(p)s=p$ for all $p \in P$.
 *Proof*:
-The map is naturally true for $M$ or $P$ is $A$, so this is ture for $P$ or $U$ are free of finite rank, and it is still isomorphism when multiply an indempotent, hence (1) implies (2), taking $U=P$, one get (3).
+The map is naturally true for $M$ or $P$ is $A$, so this is ture for $P$ or $U$ are free of finite rank, and it is still isomorphism when multiply an idempotent, hence (1) implies (2), taking $U=P$, one get (3).
 Clearly (3) implies (4).
 Consider the free A-module $A_S$ generated by $\{e_s\}_{s \in S}$, then the map $A_S \rightarrow P$ splits by $p \mapsto \sum_{s \in S}\psi_s(p)e_s$, which implies (1).
 
@@ -313,3 +313,71 @@ Let $k$ be a field with more than three elements, then a finite-dimensional k-al
 First proof that if it i true for $B,C$, then so does $A=B\times C$. Then using the theorem above to proof the semisimple case.
 
 # Splitting field
+**Definition**:
+Let $A$ be a finite-dimensional k-algebra. We say that $A$ is *split* if $End_A(S) \simeq k$ for every simple A-module $S$, or equivalently, if $A/J(A)$ is a direct product of matrix algebra over $k$. An extension field $k'$ of $k$ is called a *splitting field* for $A$ if the k'-algebra $k' \otimes_k A$ is split. Furthermore, let $G$ be a finite group, we say that $k$ is a *splitting field* if the k-algebra $k[G]$ is split.
+**Examples**: Using Wedderburn's theorem, one know that every finite-dimensional algebra over an algebraically closed field is split. 
+
+**Theorem**:
+Let $A$ be a finite-dimensional k-algebra, and let $S$ be a A-module. The structural algebra homomorphism $A \rightarrow End_k(S)$ is surjective if and only if $S$ is a simple A-module and $End_A(S) \simeq k$.
+
+**Theorem**:
+Let $A$ be a split finite-dimensional k-algebra, and let $k'/k$ be a finite extension. Then $k' \otimes_kA$ is a split k'-algebra, we have $J(k' \otimes_k A)=k'\otimes_kJ(A)$, for every simple A-module $S$, then $k'\times_kA$-module $S'=k'\otimes_kS$ is simple, and the corresponding classes of simple A-modules and of simple $k'\otimes_kA$-modules. 
+*Proof*:
+Obviously, $k' \otimes_k J(A) \subseteq J(k' \otimes_k A)$, so we only need to consider the case of $J(A)=\{0\}$, i.e. $A$ is semisimple. Using the wedderburn's theorem, we know that $k' \otimes_k A$ is the direct product of matrix algebra over k'. In particular, $k' \otimes_k A$ is semisimple, hence $J(k' \otimes_k A)=\{0\}$. The rest follows immediately.
+
+**Proposition**:
+Let $A$ be a finite-dimensional k-algebra. Let $S$ be a simple A-module, and let $b$ be the unique block idempotent in $Z(A)$ to which $S$ belongs. The block algebra $Ab$ is isomorphic to a matrix algebra over $k$ if and only if $S$ is projective and injective. In that case, we have $Ab \simeq End_k(S)$.
+*Proof*:
+Note that if $Ab$ is isomorphic to a matrix algebra, then $J(Ab)=\{0\}$. Then $S$ is projective and injective as an A-module. And that $A \rightarrow S$ is surjective, so there is a submodule isomorphic to $S$. Let $U=\bigoplus_ss$ where $s$ run through all submodule of $A$ isomorphic to $S$. Then $U \simeq S^n$, which is also injective, so there is a submodule $V$ such that $A=U \oplus V$. It follows that $Hom_A(U,V)=0$, so $A=End_A(A)^{op}=End_A(U)^{op} \times End_A(V)^{op}$, in fact the indecomposable algebra $End_A(U)^{op}=M_n(k)$ as $End_A(S)=k$. So $S$ is contained in that block. The result follows.
+
+**Theorem**:
+Let $k'/k$ be a field extension and let $A$ be a finite-dimensional k-algebra such that the k'-algebra $A'=k' \otimes_k A$ is split. Then the k-algebra $A$ is split if and only if for every simple A'-module $S'$ there is a (necessarily simple) A-module $S$ such that $k' \otimes_k S \simeq S'$. In that case, the map sending $S$ to $k' \otimes_k S$ induces a bijection between the sets of isomorphism classes of simple A-module and simple A'-modules, and we have $J(A')=k' \otimes_k J(A)$.
+*Proof*:
+1. We first proof that if $S' \rightarrow T'$ is a nonzero A'-homorphism of two simple A'-modules, then $S \simeq T$ as A-module. In fact, $S'=k' \otimes_kS,\,T'= k' \otimes_kT$ can been seen as A-module, and the map $\phi:S' \rightarrow T$ will be restriced to $\psi:S \rightarrow k'\otimes_kT \simeq T^n$ as A-modules. So $S \simeq T$.
+2. Now one know that the map $S' \rightarrow S$ is injective. Consider $k' \otimes_k S$ for an arbitrary simple A-module, then because it is finite-dimensional, there must be a simple A'-submodule $W \simeq k' \otimes_k T$, so $S \simeq T$, hence the map is bijective.
+3. The structural homomorphism $A \rightarrow \prod_S End(S)$ where $S$ run through all isomorphism classes of simple A-modules. The map above induced an injective map $A/J(A) \rightarrow \prod_S End(S)$. Using the fact that $S'$ is split and $S \rightarrow S'$ is bijective, one get $k' \otimes_k A/J(A) \rightarrow \prod_SEnd(k' \otimes_k S) \simeq (k' \otimes_k A)/k' \otimes_k J(A)$. Thus $J(A')=k' \otimes_k J(A)$.
+
+**Theorem**:
+Let $A$ be a finite-dimensional k-algebra, then there is a finite extension $k'/k$ such that $k' \otimes_k A$ is split as k'-algebra.
+*Proof*:
+Let $\bar{k}$ be the algebraic closure of $k$, then $\bar{k} \otimes_k A$ is split. Let $S$ be a simple $\bar{k} \otimes_k A$ which have a basis $\{s_1,\cdots,s_t\}$. Choose $X$ be a basis of $A$, then the action of $x \in X$ acts on $S$ as an $(\sigma_{i,j}) \in M_{t \times t}(\bar{k})$. Choose $k'$ such that all $\sigma_{i,j}$ are in $k'$, with $S$ runs over all representatives of isomorphism classes of simple modules, and $x$ runs over $X$. Now let $S'=\sum_ik's_i$ be the module generated by $\{s_1, \cdots,s_t\}$, one check immediately that it is a $A$ module. Moreover, $\bar{k} \otimes_{k'} S' \simeq S$, so unsing the theorem above, one proof the theorem.
+
+**Definition**L:
+Let $A$ be a k-algebra, and $k_0$ is a subfield of $k$. We say that $A$ is *defined over $k_0$* if there is a $k_0$-algebra $A_0$ such that $A \simeq k \otimes_{k_0}A_0$.
+
+**Proposition**:
+Suppose that $k$ is an algebraically closed field of primitive character $p$. Let $q$ be a power of $p$ and let $V$ be a k-vector space of finite-dimensional $n$. Let $\Phi$ be an additive automorphism of $V$ and denoted by $V^\Phi$ be the subgroup of fixed points in $V$ of $\Phi$. Suppose that $\Phi(\lambda v)=\lambda^q\Phi(v)$ for all $v \in V$ and all $\lambda \in k$. Then $V^\Phi$ is an $\mathbb{F}_q$-subspace of $V$ such that $V=k \otimes_{\mathbb{F}_q} V^\Phi$.
+*Proof*:
+It is clear that $V^\Phi$ is an $\mathbb{F}_q$-subspace of $V$, so we only need to check that $V=k\otimes_{\mathbb{F}_q} V^\Phi$. Set $I=\{1,\cdots,n\}$ and choose $(x_i)_{i \in I}$ be a basis for $V$. Take $S=(s_{ij}) \in M_{n \times n}(k)$ be the corresponding matirx of $\Phi$ under the basis $(x_i)$, clearly, $S$ is invertable. Set $F:k \rightarrow k$ by $F(\lambda)=\lambda^q$. Using the theorem of *Lang*, one know there is a $T=(t_{ij})$ such that $T\cdot F(T)^{-1}=S$. Set $y_i=\sum_{j}t_{ij}x_j$, then $\Phi(y_i)=\sum_jt_{ij}^q\Phi(x_j)=\sum_u\sum_j(s_{ju}t_{ij}^q)x_u$, using the fact that $S \cdot F(T)=T$, one know that $\Phi(y_i)=y_i$. Meanwhile, $S,T$ is invertable, so $y_i$ form a basis for $V$, so we proof the theorem.
+
+# Modules for simple group algebra
+**Theorem**:
+Let $k$ be a splitting field for $G$ such that $|G|$ in invertable in $k$, then the number of isomorphism classes of simple $k[G]$-module is equal to the number of conjugacy classes of $G$.
+*Proof*:
+Using the Maschke's theorem, we know that $k[G]$ is semisimple, hence it is isomorphic to $\prod_iEnd_k(S_i)$ where $S_i$ is the representatives of isomorphism classes of simple $k[G]$-modules. Now consider $Z(k[G])$, one know that $dim_k(Z(k[G]))$ is equal to the number of conjugacy classes of $G$. Meanwhile, $Z(End_k(S_i))=k \cdot id_{S_i}$ ([[Schur's lemma]]), so the number of $S_i$ is equal to $dim_k(Z(k[G]))$ as well.
+
+**Theorem**:
+Let $A$ be a finite-dimensional split algebra over a field $k$, then the number of isomorphism classes of simple A-modules is equal to $dim_k(A/(J(A)+[A,A]))$.
+*Proof*:
+We may assume that $A$ is split semisimple since it won;t make any differece if we quotient out $J(A)$. In that case $A/(J(A)+[A,A])=A/[A,A]$. In particular, we may assume $A$ is a matrix algebra over $k$, but then $A$ has a unique isomorphism class of simple A-module, and that $dim_k(A/[A,A])=1$.
+
+**Lemma**:
+Let $G$ be a finite group and $k$ a field with prime character $p$. Then for all $x \in G$, there is a unique $u,v \in \langle x \rangle$ such that $u$ is a $p$-element and $q$ a $p'$-element with $x=uv=vu$, and if the order of $u$ is $p^a$, then $(x-v)^{p^a}=0$ in $k[G]$.
+
+**Lemma**:
+Let $A$ be a finite-dimensional algebra over a field $k$ with prime character $p$, then for all $a,b \in A$ and $n \in \mathbb{Z}_{\geq 0}$ there is a $c \in [A,A]$ such that $(a+b)^{p^n}=a^{p^n}+b^{p^n}+c$.
+*Proof*:
+Let $x_1x_2\cdots x_{p^n}$ be a string consists of $a,b$, set $\gamma(x_1\cdots x_{p^n})=x_{p^n}x_1\cdots x_{p^n-1}$, then $\gamma(x)-x$ is a commutator, hence $(a+b)^{p^n}=\sum_i \begin{pmatrix}p^n\\ i\end{pmatrix}a^ib^{n-i}+c=a^{p^n}+b^{p^n}+c$, where $c \in [A,A]$.
+
+**Lemma**:
+Let $A$ be a finite-dimensional algebra over a field $k$ with prime character $p$. For any $a \in [A,A]$ and any nonnegative integer $n$, we have $a^{p^n} \in [A,A]$. Meanwhile, $a \in J(A)+[A,A]$ if and only if $a^{p^n} \in [A,A]$ for some $n$.
+*Proof*:
+Let $\bar{a}$ be the image of $a$ in $A/J(A)$, a matrix space over $k$. So one have $\bar{a}^{p^n} \in [\bar{A},\bar{A}]$ has trace 0. Extending $k$ to its algebraic closure $\bar{k}$, $\bar{a}$ is conjugate to an upper triangle matrix, so the trace of $\bar{a}$ is 0 as well, hence $\bar{a} \in [\bar{A},\bar{A}]$, i.e. $a \in J(A)+[A,A]$. Conversely, choose $b \in J(A)$
+such that $a+b \in [A,A]$, then let $n$ large enough, one have $a^{p^n}=(a+b)^{p^n}+c \in [A,A]$.
+
+Now we are able to proof the following theorem.
+**Theorem**(Brauer):
+Let $G$ be a finite group and $k$ a splitting field of $k$ with character $p$, then the number of isomorphism classes of simple $k[G]$-modules is equal to the number of conjugacy classes of $p'$-elements in $G$.
+*Proof*:
+We now need to compute the dimension of $K[G]/(J(k[G])+[k[G],k[G]])$. Use the lemma above, $(x-v)^{p^n}=0$, so $x-v \in J(k[G])+[k[G],k[G]]$, so the image of $x$ and $s$ in $K[G]/(J(k[G])+[k[G],k[G]])$ is equal, hence $R'$ the set of representatives of all conjugacy classes for $p'$-elements spanned $K[G]/(J(k[G])+[k[G],k[G]])$. Suppose $\sum_{s \in R'} \lambda_ss \in J(k[G])+[k[G],k[G]]$, which is to say $\sum_{s \in R'} \lambda_s^{p^n}s^{p^n} \in [k[G],k[G]]$ for some $n$. One note that $s^{p^n}$ is just another set of representatives of these conjugacy classes, so they are linearly independent.
+

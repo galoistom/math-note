@@ -28,10 +28,10 @@ Simple observation:$\lambda_1=\max\limits_{\lVert v \rVert=1} B(v,v), \lambda_n=
 Using this fact, we can give another proof of 正交对角化定理: note that $S^n$ is compact, hence $\max\limits_{\lVert v \rVert=1} (v,Sv)$ exists, and using the fact that $S=S^*$, then we get the max point $v$ is an eigenvector of S (Langrange multiples).
 Theorem(Coueant-fischer)
 Given B, for a $k<1<n=dim(V)$, we have $\lambda_k=\min\limits_{dim(U)=n-k+1}(\max\limits_{\lVert v \rVert=1 \in U}B(v,v))$, and $\lambda_k=\max\limits_{dim(U)=k}(\min\limits_{\lVert v \rVert=1 \in U}B(v,v))$.
-*Proof*: we only need to proof the frist one. Assume $U \subset V, dim(U)=n-k+1$, then $dim(U \cap <v_1,\cdots,v_k>)=dimU+k-dim(U+<v_1,\cdots,v_k>)\geq 1$. We can then take $v=\sum\limits_{i=1}^{k}a_iv_i, \lVert v \rVert=1$, then $B(v,v)=\sum\limits_{i=1}^{k}\lambda_ia_i^2 \geq\lambda_k$, we now check that the maximum exists: Take $U=<v_k,\cdots,v_n>$, then for any v, we have $B(v,v) \leq \lambda_l$, hence the inf is attained.
+*Proof*: we only need to proof the frist one. Assume $U \subset V, dim(U)=n-k+1$, then $dim(U \cap \langle v_1,\cdots,v_k \rangle)=dimU+k-dim(U+<v_1,\cdots,v_k>)\geq 1$. We can then take $v=\sum\limits_{i=1}^{k}a_iv_i, \lVert v \rVert=1$, then $B(v,v)=\sum\limits_{i=1}^{k}\lambda_ia_i^2 \geq\lambda_k$, we now check that the maximum exists: Take $U=\langle v_k,\cdots,v_n \rangle$, then for any v, we have $B(v,v) \leq \lambda_l$, hence the inf is attained.
 
 *This is also related to SVD:* 
-proposition2: Let V,W be finite dimensional vector space with inner product. and $T:V\rightarrow W$ be linear transformation and $\sigma_1\geq\cdots$ be its singular values of T. Let $\sigma_i=0$ if i>min(dimV,dimW). Then $\sigma_1=\max\limits_{v \neq 0} \frac{\lVert Tv \rVert}{\lVert v \rVert}$, $\sigma_i=\min\max\frac{\lVert Tv \rVert}{\lVert v \rVert}$, and $\sigma_{dimV}=\min\limits_{V\neq0}\frac{\lVert Tv \rVert}{\lVert v \rVert}$. We proof this by taking $S=T^*T$, and $B(v_1,v_2)=(v_1|T^*Tv_2)=(Tv_1|Tv_2)$, hence $B(v,v)=\frac{\lVert Tv \rVert^2}{\lVert v \rVert^2}$, recall that $\sigma_i^2$ is the eigenvalue of $S$, using the theorem above and take square root, then we are done.
+proposition2: Let V,W be finite dimensional vector space with inner product. and $T:V\rightarrow W$ be linear transformation and $\sigma_1\geq\sigma_2\cdots$ be its singular values of T. Let $\sigma_i=0$ if i>min(dimV,dimW). Then $\sigma_1=\max\limits_{v \neq 0} \frac{\lVert Tv \rVert}{\lVert v \rVert}$, $\sigma_i=\min\max\frac{\lVert Tv \rVert}{\lVert v \rVert}$, and $\sigma_{dimV}=\min\limits_{V\neq0}\frac{\lVert Tv \rVert}{\lVert v \rVert}$. We proof this by taking $S=T^*T$, and $B(v_1,v_2)=(v_1|T^*Tv_2)=(Tv_1|Tv_2)$, hence $B(v,v)=\frac{\lVert Tv \rVert^2}{\lVert v \rVert^2}$, recall that $\sigma_i^2$ is the eigenvalue of $S$, using the theorem above and take square root, then we are done.
 
 # Positive matrix:
 We define $A \geq B$ if $a_{ij}\geq b_{i,j}$. Then $A>0,A\geq0$ make sense. Then we have the following lemma: if $A \in M_{m \times n}(\mathbb{R})>0, x \in \mathbb{R}^n\geq0$, then $Ax>0$. To study eigenvalues and eigenvector of $A>0$. Define the spectral radius $S(A)=\max\limits_{\lambda}|\lambda|$, where $\lambda$ runs through A' eigenvalues.
@@ -44,7 +44,7 @@ Theorem: Let $A>0$
 
 **we proof the frist statement**: Let $S:=\{x\in \mathbb{R}^n:\lVert x \rVert=1,x\geq0\}$, which is compact. Consider the continuous map $\mathcal{L}:S \rightarrow \mathbb{R}_{\geq0}$, $x \mapsto \min\{\frac{(Ax)_i}{x_i}:1 \leq i \leq n, x_i \neq 0\}$. So there is a $v \in S$ that attains the maximum $S>0$ at v. We claim that $Av=S(A)v$. $\mathcal{L}(v)=S$ hence $Av \geq Sv$ if $Av\neq Sv$, then $Av-Sv>0$, so we get $A(Av-Sv)>0$. For a small $\epsilon>0$ $A(Av-Sv)>\epsilon Av$, thus $Aw>(S+\epsilon)w$, where $w=t\cdot Av$, which is to say $\mathcal{L} \geq S+\epsilon$. the contradiction shows that $Av=Sv$. We also have $S \leq S(A)$, to show $S=S(A)$, we take $\mu\in\mathbb{C}, w\in \mathbb{C}^n-{0}, Aw=\mu w$,then for any i, $|(\mu w)_i|=|\mu||W_i|$, so $|\sum a_{ij}w_j| \leq \sum a_{ij}|w_j|$, we now take $w'\in\mathbb{C}^n$ whose i-th value is $|w_i|$, scaling it to have absoluate value 1. Hence $S(A) \geq S \geq \mathcal{L}(w') \geq |\mu|$ for all eigenvalue $\mu$, thus we have $S=S(A)$.
 
-**We now proof (2)**: what we need is to show that $|\mu|=S(A)$ leads to $\mu=S(A)$. The consiquence is that $|\mu|=S(A)$ shows that $\mathcal{L}(w')=\max \mathcal{L}$, hence $\sum\limits_{j}a_{ij}|w_j|=|\sum\limits_j a_{ij}w_j|$, so $w_i$ are all on the same ray in $\mathbb{C}$. Take a $c \in \mathbb{C}$ such that $c^{-1}w_i \in \mathbb{R}_{\geq0}$, then we have $A(c^{-1}w)=\mu(c^{-1}w)$, hence $\mu \in \mathbb{R}_{\geq 0}$, so we have $\mu=S(A)$.
+**We now proof (2)**: what we need is to show is that $|\mu|=S(A)$ leads to $\mu=S(A)$. The consiquence is that $|\mu|=S(A)$ shows that $\mathcal{L}(w')=\max \mathcal{L}$, hence $\sum\limits_{j}a_{ij}|w_j|=|\sum\limits_j a_{ij}w_j|$, so $w_i$ are all on the same ray in $\mathbb{C}$. Take a $c \in \mathbb{C}$ such that $c^{-1}w_i \in \mathbb{R}_{\geq0}$, then we have $A(c^{-1}w)=\mu(c^{-1}w)$, hence $\mu \in \mathbb{R}_{\geq 0}$, so we have $\mu=S(A)$.
 
 **Proof of (3)**: Suppose $v,v' \in \mathbb{R}^n$, $Av=S(A)v,Av'=S(A)v'$, and $v>0$, we want to show that $v' \in \mathbb{R}v$. If not, we may choose $\epsilon>0$ s.t. $v-\epsilon v'>0$, but $\exists i,(v-\epsilon v')_i=0$. Then $(v-\epsilon v')=S(A)^{-1}A(v-\epsilon v')>0$, a contradictiom.
 
@@ -269,4 +269,86 @@ We only need to show $g \in F[x_1,\cdots,x_n]$, if $g(e_1,\cdots,e_n)=0$, then $
 3. Consider $p:=x^n-y_1x^{n-1}+ \cdots+(-1)^{n}y_n$, then there is a extension fields $F \hookrightarrow L$ s.t. $p$ split in $L[x]:p=\prod_i(x-x_i)$, hence $e_k(x_1, \cdots, x_n)=y_k$, so $g(e_1, \cdots,e_n) \neq 0$.
 
 *Facts*: $F$ infinite field, $g \in F[x_1, \cdots,x_n],g \neq 0$ then there is a $(y_1, \cdots,y_n) \in F^n$, $g(y_1,\cdots,y_n) \neq 0$. Using induction, $n=1$ clear, if $n>1$, take $(g_1,\cdots,g_{n-1})$, such that $g_k(y_1,\cdots,y_k) \neq 0$, then see $g$ as a polynomial of $x_n$ .
-*Remark*: If $F$ is a subfield of $\mathbb{C}$, then we may work as $\mathbb{C}$
+*Remark*: If $F$ is a subfield of $\mathbb{C}$, then we may work as $\mathbb{C}$. An the theorem still holds if $F$ is an integal domain (R:integral $\Rightarrow$ $R \hookrightarrow F$, where $F$ is its field of fraction.)
+
+**Example**:
+- discriminant/判别式: $f=x^n-c_{1}x^{n-1} + \cdots+(-1)^nc_{n}=\prod_i(x-\alpha_i)$. Define $disc(f):=\prod_{i<j}(\alpha_i-\alpha_j)^2$ If we view $\alpha_1,\cdots,\alpha_n$ as variables, then $disc(f)$ is a symmetric polynomial in $\alpha_1, \cdots,\alpha_n$, so $disc(f)$ is a polynomial in $e_i(\alpha_1, \cdots,\alpha_n)=c_i$ and is unique.
+- $disc(x^2-bx+c)=(\alpha_1+\alpha_2)^2-4\alpha_1\alpha_2=b^2-4c$.
+- $disc(x^3+px+q)=((\alpha_1-\alpha_2)(\alpha_2-\alpha_3)(\alpha_3-\alpha_1))^2=-4p^3-27q^2$.
+- Using PARI ant type *poldisc(X^3+aX^2+bX+c)* one can get the disc of the polynomial.
+
+# Resultant/结式
+**Motivation**:
+$F$ a field, $f,g \in F[x]$ Determine whether $f,g$ are coprime. It is ok to use euclidean algorithm. But we also want an "equational" criterion.
+
+**Definition**:
+Fix $n,m \in \mathbb{Z}_{\geq 1}$, consider $f=v_0x^n+ \cdots+v_n$, $g=w_0x^m+\cdots+w_m$, then the resultant
+$$
+Res(f,g):=\begin{vmatrix}v_0&\cdots&\cdots&\cdots&v_n\\&v_0&\cdots&\cdots&\cdots&v_n\\&&\ddots&&&&\ddots\\&&&v_0&\cdots&\cdots&\cdots&v_n\\
+w_0&\cdots&\cdots&\cdots&w_m\\&w_0&\cdots&\cdots&\cdots&w_m\\&&\ddots&&&&\ddots\\&&&w_0&\cdots&\cdots&\cdots&w_m\end{vmatrix}
+$$
+*Property*:
+- View $v_i,w_j$ as variables, then $Res(f,g)$ is a polynomial in $v_0, \cdots,w_m$, independent of $F$.
+- The coefficient of $v_0^mw_m^n$ is 1.
+- $Res(f,g)=(-1)^{mn}Res(g,f)$.
+- $\forall\, t \in F$, $Res(tf,g)=t^mRes(f,g)$ and $Res(f,tg)=t^nRes(f,g)$.
+
+**Lemma**:
+Given $n,m$ and $f,g$ then $Res(f,g)=0 \Longleftrightarrow$ $\exists\,f_1,g_1 \in F[x]-\{0\}$ such that $degf_1<n,\,degg_1<m,\ fg_1+gf_1=0$.
+
+**Theorem**:
+Given $n,m$ and $f,g$ as before. $Res(f,g)=0 \Longleftrightarrow$ wither $v_0=w_0=0$ or there is $h \in F[x],degh>0$ such that $h|f,h|g$. 
+*Proof*:
+($\Longleftarrow$) If $v_0=0=w_0$, then $Res(f,g)=0$. If there is $h|f,h|g$, then $f \cdot \frac{g}{h}-g \cdot \frac{f}{h}=0$.
+($\Longrightarrow$) Assume $Res(f,g)=0$.
+- Case 1. One of $f,g$ are 0. Suppose $f=0$, $degg>0$, then we take $h=g$ then one get $w_0=0$.
+- Case 2. $f,g$ are nonzero. May assume $(v_0,w_0) \neq (0,0)$, then there is $f_1,g_1 \neq 0$, such that $f_1g+fg_1=0$. In $F(x):=Frac(F[x])$, $\frac{f}{g}=\frac{-f_1}{g_1}$. If $f$ is coprime to $g$, then we would get $g|g_1$, contradiction.
+
+**Theorem**:
+Fix $n,m \in \mathbb{Z}_{\geq 1}$. $f=a\prod_i(x-\alpha_i),\,g=b\prod_j(x-\beta_j)$, then $Res(f,g)=a^m\prod_ig(\alpha_i)=(-1)^{nm}b^n\prod_jf(\beta_j)=\alpha^m\beta^n\prod_{i,j}(\alpha_i-\beta_j)$.
+*Proof*:
+We only need to show $Res(f,g)=a^m\prod_ig(\alpha_i)$. 
+1. Special case: $g(\alpha_1),\cdots,g(\alpha_n)$ are distinct, consider $Res(f,g-y) \in F[y]$ has degree $n$, note that $f$ and $g-g(\alpha_i)$ has a common root $\alpha_i$, then $\prod_i(g(\alpha_i)-y)|Res(f,g-y)$. Both side have $deg_y=n$, and leaing coefficient, so it muse be euqal.
+2. General case "Perturbation". (the theorem is true for almost every $f,g$, so we know it must be true). Keep $g$, assume $b \neq 0$, and take $f=\prod_i(x-z_i)$, in the "special case" $Res(f,g)=\prod_ig(z_i)$. Since $g(z_1),\cdots,g(z_n)$ are distinct in $F[z_1,\cdots,z_n]$, let $z_i \rightarrow \alpha_i$ then we are done.
+
+Back to discriminant.
+Fiven $f=a \prod_i(x-\alpha)$ in $F[x]$, set $disc(f):=a^{2n-2}\prod_{i<j}(\alpha_i-\alpha_j)^2$, then $a \cdot disc(f)=(-1)^{\frac{n(n-1)}2}Res(f,f')$. 
+
+**Newton's formula**
+$\forall k \geq 0$, fix $x \in \mathbb{Z}_{\geq 1}$ and $p_k:=\sum_{i=1}^nx_i^k$, $e_1,\cdots,e_n$ are elementary symmetric polynomials, $e_0:=1$. Then
+1. $1 \leq k \leq n$ then $e_0p_k-e_1p_{k-1}+ \cdots+(-1)^kke_k=0$.
+2. $k \geq n$, then $p_k-e_1p_{k-1}+ \cdots+(-1)^ne_np_{k-n}=0$.
+Using these, one can:
+- express $p_k$ in terms of $e_1,\cdots,e_n$, with coefficients$/\mathbb{Z}$.
+- express $e_k$ in terms of $p_1,\cdots,p_n$, with coefficients$/\mathbb{Q}$.
+*Proof*:
+Consider the formal power series in $Y:P(y):=\sum_{k \geq 1}y^{k-1}=\sum_{k \geq 1}\sum_{i=1}^nx_i^ky^{k-1}=\sum_{i=1}^n\frac{x_i}{1-x_iy_i}$ and $E(y)=\sum_{k=0}^{n}e_ky^k=\prod_{i=1}^n(1+x_iy)$, then $P(-y)=\sum_{i=1}^n\frac{x_i}{1+x_iy}=\frac{E'(y)}{E_y}$. So we have $E(y)P(-y)=E'(Y)=\sum_{k=1}^nke_ky^k$. Compute each coefficients, one proof the theorem.
+
+# Irreducible polynomials
+Recall: $R$ is an integral domain, and $x,y \in R$. If $\exists u \in R$, $xu=y$ we write x~y. Let $x \in R-R^\times$, if $x=ab$, then a~1 or b~1, we say $x$ is irreducible in $R$. 
+
+Now let $F$ be a field. $R=F[x]$, $R^\times=F^\times$ $f \in F[x]-F$ is irreducible means: $f=g_1g_2 \Rightarrow g_1 \in F^\times || g_2 \in F^\times$. FOr $\mathbb{Z}$: more complicated. Example: $2x \in \mathbb{Z}[x]$ reducible yet all its divisor are of deg=0. Irreducible in $\mathbb{Q}[x]$ must cope with $\mathbb{Z}[x]$.
+
+**Definition**:
+Let $f=a_0+ \cdots+a_nx^n$, and $c(f):=gcd(a_0,\cdots,a_n)$, if $c(f)=1$, we say that $f$ is primitive. 
+
+**Lemma**:
+Let $g,h \in \mathbb{Z}[x]$ be both primitive, then so in $gh$.
+*Proof*:
+$\forall p$ prime. Write $g=a_0+\cdots+a_rx^r+\cdots$, where $r$ is biggest $p \nmid a_r$, and similiarly $h=b_0+\cdots+b_sx^s+\cdots$, then the coefficient of $x^{r+s}$ is not divided by $p$, hence $gh$ is primitive. 
+*Remark*: This is just $\mathbb{F}_p[x]$ is an integral domain.
+
+**Theorem**:
+Let $f \in \mathbb{Z}[x]-\{0\}$ be primitive.
+1. If $f=gh$ in $\mathbb{Q}[x]$, then there is an $\alpha \in \mathbb{Q}$ such that $g_1:=\alpha g,h_1=\alpha^{-1}h$ are both in $\mathbb{Z}[x]$ and primitive.
+2. When $degf >0$, $f$ is irreducible in $\mathbb{Q}[x]$ $\Leftrightarrow$ there is no $g,h \in \mathbb{Z}[x]$ such that $degg,degh>0$ and $f=gh$.
+*Proof*:
+in (1), $degf=0 \Rightarrow$ take $\alpha:=g^{-1}$. Assume $degf>0,f=gh$ in $\mathbb{Q}[x]$. Take $u,v \in \mathbb{Z}_{\geq 1}$ s.t. $ug,vh \in \mathbb{Z}[x]$. Then $uv=c(uvf)=c(ugvh)=c(ug)c(vh)$, hence $f=\frac{ug}{c(ug)}\ \frac{vh}{c(vh)}$, so one may take $\alpha=\frac{u}{c(uv)}$. 
+For (2), clear.
+
+**Recall**:an integral domain is $UFD$ if $\forall r \in R-\{0\}$ has a decomposition $r=up_1\cdots p_m$ where $p_i$ are irreducible emelents in $R$ and $u$ a unit.
+
+**Theorem**:
+$\mathbb{Z}[x]$ is $UFD$ whose irreducibles are $\begin{cases}1. \text{irrducibles in } \mathbb{Z}\\2. \text{ primitive } f \in \mathbb{Z}[x] \text{satisfying the second condition in the above theorem}\end{cases}$ 
+
+Now we want to show that $\mathbb{Z}[x]$ is a $UFD$, in fact $\mathbb{Z}[x]$ is a $ED$, which immediately lead to what we want.
